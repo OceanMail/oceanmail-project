@@ -58,7 +58,7 @@ metrics still need measurement. No repository is declared retrofit-complete.
 | `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 | `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 | `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a proposed / Codex | Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
-| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0 merged; S2 tracking draft / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
+| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0/S2 tracking accepted historically; public S3a tracking proposed / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 
 Station source/tooling measurement was sealed at
 `2f22edba9a57ae7782fec0f9f27b81f555eaaed5`; subsequent commits add only the
