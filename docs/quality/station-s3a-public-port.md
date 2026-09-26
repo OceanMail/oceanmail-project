@@ -1,4 +1,4 @@
-# Station S3a public port — 2026-09-26
+# Station S3a public port â€” 2026-09-26
 
 [Public Station PR #4](https://github.com/OceanMail/oceanmail-station/pull/4)
 contains the implementation port.
