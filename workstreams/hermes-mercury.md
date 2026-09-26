@@ -93,7 +93,7 @@ Revalidate all upstream state, licenses, releases, and implementation availabili
 
 ## Outstanding work
 
-- upstream the proven Phase 4I reciprocal-session stale-TCP-tail/lifecycle fix tracked in `OceanMail/oceanmail-station#35`, including the `OOOOOO` versus `Shere` reproduction and accepted old-session cleanup-boundary rationale;
+- upstream the proven Phase 4I reciprocal-session stale-TCP-tail/lifecycle fix documented in the [Station patch notice](https://github.com/OceanMail/oceanmail-station/blob/main/lab/phase1/HERMES_PATCH_NOTICE.md), including the `OOOOOO` versus `Shere` reproduction and accepted old-session cleanup-boundary rationale;
 - establish the written upstream technical thread and, where useful, open focused issues covering:
   - future HERMES API/backend/frontend boundaries versus the existing email/UUCP stack;
   - automatic peer/gateway discovery and selection;

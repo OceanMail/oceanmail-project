@@ -20,13 +20,13 @@ Deliver the OceanMail desktop client/product experience on a pinned Thunderbird 
 
 ## Current implementation state
 
-Desktop PR #7 is the live-verified alpha baseline. Final local verification used Debian/KDE, pinned Thunderbird 140.14.0esr, and the real two-account SMTP/IMAP development lab. It proved cold-start initialization, account-scoped Available/Saved/Sent integration, Local Folders/Outbox hiding in the dedicated profile, restart idempotence, truthful uncorrelated Sent status, native Important metadata, and the accepted Cards/Table alpha compromise. Component evidence lives in `desktop/docs/ui-review/README.md` and `desktop/docs/MAIL_MODEL_CORRECTION.md`.
+The historical live-verified alpha is the initial public baseline. Final local verification used Debian/KDE, pinned Thunderbird 140.14.0esr, and the real two-account SMTP/IMAP development lab. It proved cold-start initialization, account-scoped Available/Saved/Sent integration, Local Folders/Outbox hiding in the dedicated profile, restart idempotence, truthful uncorrelated Sent status, native Important metadata, and the accepted Cards/Table alpha compromise. Component evidence lives in `desktop/docs/ui-review/README.md` and `desktop/docs/MAIL_MODEL_CORRECTION.md`.
 
-Desktop PR #13 merged the Available/account/privacy documentation reconciliation against Station PR #26. It records the current logical contract, privacy boundary, fixture limitations, planner defects, and implementation prerequisites; it does not claim that the real Available API is implemented.
+The Available/account/privacy documentation was reconciled with the Station foundation contract. It records the current logical contract, privacy boundary, fixture limitations, planner defects, and implementation prerequisites; it does not claim that the real Available API is implemented.
 
-Desktop PR #15 merged organization project-spine integration. The former Desktop governance PR #14 was closed as superseded because organization-wide AI/contributor governance belongs in `OceanMail/oceanmail-project`; Desktop retains only component-specific constraints locally.
+Organization-wide AI/contributor governance belongs in `OceanMail/oceanmail-project`; Desktop retains only component-specific constraints locally.
 
-Desktop PR #21 merged the final chat-preservation design reconciliation for OChat transmission evidence, consent-based location/contact-card flows, Grid geographic/topology visualization, Dashboard/Grid visibility, and gateway-policy presentation. These are accepted design documents, not claims that the corresponding Station APIs or live Grid evidence are implemented.
+The accepted design reconciliation covers for OChat transmission evidence, consent-based location/contact-card flows, Grid geographic/topology visualization, Dashboard/Grid visibility, and gateway-policy presentation. These are accepted design documents, not claims that the corresponding Station APIs or live Grid evidence are implemented.
 
 ## Constraints
 

@@ -27,7 +27,7 @@ Project/Station/Desktop source snapshots are the existing documentation PR heads
 
 Bands 0–3 supersede the unmerged six-band and 2/6/2 reserved-slot drafts. Normal Band 1 cap/route exception, Band 2 remainder, and unreserved Band 3 broadcasts are current design. Initial 10-minute leases/4-minute caps remain tunable.
 
-The audit does not change unrelated implementation status, open validation findings, pricing, authentication/storage design, regulatory decisions, physical-radio Phase 5 gates, upstream pins, or the independent HF-tier PR #35. Native OMail remains capable of disconnected store-and-forward operation.
+The audit does not change unrelated implementation status, open validation findings, pricing, authentication/storage design, regulatory decisions, physical-radio Phase 5 gates, upstream pins, or the independent HF-tier work. Native OMail remains capable of disconnected store-and-forward operation.
 
 No dedicated channel per band, automatic relay custody from overhearing, guaranteed passive decoding of arbitrary modem sessions, instantaneous cross-channel Emergency detection, or proven collision-free protocol is claimed.
 
@@ -39,6 +39,6 @@ Integrate project authority first, then its component documentation companions. 
 
 ## Merge review addendum
 
-The integration review found an additional current-policy conflict in `delivery-evidence-and-repair.md`: ordinary receipts were still placed below local payload. ADR-008 supersedes that order; ordinary receipts/repair are now explicitly Band 1 and Emergency control remains Band 0. The snapshot date and obsolete queued/open status for merged Station #47 and Project #35 were also reconciled. Desktop #23's refreshed-head CI passed, but live Thunderbird acceptance remains open.
+The integration review found an additional current-policy conflict in `delivery-evidence-and-repair.md`: ordinary receipts were still placed below local payload. ADR-008 supersedes that order; ordinary receipts/repair are now explicitly Band 1 and Emergency control remains Band 0. The snapshot date and obsolete queued/open status for the readiness and HF-tier changes were also reconciled. The Desktop scheduling-docs refreshed-head CI passed, but live Thunderbird acceptance remains open.
 
 The two textual merge conflicts in the decision ledger and Station workstream were resolved by retaining both ADR-007 capacity-tier eligibility and ADR-008 band/channel policy. The earlier audit scope and snapshots above remain a historical record, not a claim that those were final merged heads.
