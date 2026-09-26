@@ -14,7 +14,7 @@ The active 0.2 repository is bootstrap-level and primarily defines its boundary.
 
 OceanMail uses a dedicated GitHub organization. Shared self-hosted CI runners are organization-scoped infrastructure rather than repository-owned machines.
 
-Private runner inventories and operational procedures are excluded from public documentation. Administrative exclusion of public repositories from trusted execution remains a publication gate.
+Private runner inventories and operational procedures are excluded from public documentation. Administrative exclusion of public repositories from trusted execution is an ongoing security requirement.
 
 OceanMail-operated Server/infrastructure is the sole public SMTP/MX boundary. Internet-connected Stations and gateway Stations do not become independent public MTAs or deliver directly to arbitrary Internet SMTP systems. Native OMail remains decentralized and may continue without central Internet-mail infrastructure.
 
