@@ -46,9 +46,9 @@ Current settled Grid-facing semantics include:
 
 ## Current implementation state
 
-No-radio work is complete through Phase 4I, including returned receipt correlation. Station PR #26 (Available/account-authorization/retrieval-plan foundation) merged 2026-09-11. Station PR #25 also merged 2026-09-11, completing Debian trixie/Dovecot 2.4 compatibility and a real authenticated writable-IMAP `\Seen` state transition proof.
+No-radio work is complete through Phase 4I, including returned receipt correlation. The Available/account-authorization/retrieval-plan foundation was accepted on 2026-09-11, alongside Debian trixie/Dovecot 2.4 compatibility and a real authenticated writable-IMAP `\Seen` state transition proof.
 
-A nondeterministic Phase 4I readiness failure observed during PR #25 passed on immediate rerun at the exact same source/head; issue #42 was closed by merged PR #47 after bounded readiness-gate hardening and current-base integration validation without weakening the evidence contract.
+A nondeterministic Phase 4I readiness failure observed during Dovecot compatibility reconciliation passed on immediate rerun at the exact same source/head; the readiness race was corrected by bounded readiness-gate hardening and current-base integration validation without weakening the evidence contract.
 
 The in-memory lease controller is supplemented by public
 [Station PR #1](https://github.com/OceanMail/oceanmail-station/pull/1), merged on
@@ -61,15 +61,14 @@ remain outstanding. See
 
 Current follow-on work:
 
-Merged laboratory implementation: Station
-is the first loopback-only Phase 4J slice of #23, not the production identity or
-LAN release gate. Station
-merged as `65d75cb96b0b1247f598c49a60a11b8cba68e5b8` after current-base Phase 4I run `35559385475` passed. Receipt trust remains laboratory-only. See
+The merged laboratory implementation provides the first loopback-only Phase 4J
+authentication slice. Production identity and LAN release remain gated.
+Receipt trust remains laboratory-only. See
 [`station-client-implementation-gates.md`](../docs/specifications/station-client-implementation-gates.md)
 before proceeding from lab context to private Available/plan/accounting state.
 
-- issue #23 authenticated permission-scoped API/account identity;
-- issue #24 account-scoped Available/retrieval/ledger API after #23;
+- production authenticated permission-scoped API/account identity;
+- account-scoped Available/retrieval/ledger API after production authentication;
 - ADR-008 scheduler follow-on: implement Bands 0–3, Band 1 cap/route exception, Band 2 local/relay fairness, unreserved broadcasts, and negotiated/single-radio channel behavior within ADR-007's capacity tiers, survival behavior, and authorization gates. Track each remaining implementation slice in a public issue before assigning it;
 - production encrypted storage/per-user key separation;
 - Grid/control, relay/gateway, accounting/scheduling, API expansion;
@@ -126,4 +125,4 @@ Band 1 is public discovery/route/access coordination plus authorized urgent publ
 
 ## CI retrofit
 
-Station remains the first application measurement/ratchet target. G0/S1/S2 were accepted in the archive lineage; the owner has assigned review and selective porting of the remaining S3a tooling into the public repositories. [The public port record](../docs/quality/station-s3a-public-port.md) and [central tracker](../docs/specifications/ci-quality-retrofit.md) record scope and acceptance gates. S3a remains proposed, with no baseline or CI enforcement activation. S3b/S4 and physical-radio work are not authorized by this port.
+Station remains the first application measurement/ratchet target. G0/S1/S2 are historical completed phases; S3a tooling and tracking merged on 2026-09-26. [The public port record](../docs/quality/station-s3a-public-port.md) and [central tracker](../docs/specifications/ci-quality-retrofit.md) record scope and acceptance gates. S3a is merged, with no baseline or CI enforcement activation. S3b/S4 and physical-radio work are not authorized by this port.

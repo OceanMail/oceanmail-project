@@ -31,7 +31,7 @@ OceanMail 0.2 is HERMES/Mercury upstream-first. BEMPIC is frozen and M4P integra
 
 Station has proven the no-radio store/transport path through Phase 4I, including SMTP/Postfix, HERMES `uuxcomp`, Taylor UUCP, Mercury simulated constrained transport, remote mailbox evidence, and a returned receipt correlated back to the original message/job. Accepted trust remains laboratory-only (`lab_peer_transport_unverified`), not production cryptographic peer authentication or human-read proof.
 
-Phase 4I also identified a reciprocal-session stale-data defect in the pinned HERMES VARA/Mercury bridge. OceanMail carries a narrow tracked laboratory patch; current `Rhizomatica/hermes-net/main` was rechecked on 2026-09-11 and still lacks that fix. Upstream resolution remains outstanding; the local patch/lifecycle gates must remain until an upstream replacement is accepted and the reciprocal acceptance is rerun.
+Phase 4I also identified a reciprocal-session stale-data defect in the pinned HERMES VARA/Mercury bridge. OceanMail carries a tracked laboratory retirement patch; [Station PR #3](https://github.com/OceanMail/oceanmail-station/pull/3) merged updated HERMES/Mercury inputs and regression coverage on 2026-09-26. Unmodified HERMES at the selected SHA still fails the retained lifecycle/TCP probes. Upstream resolution remains outstanding; the local patch/lifecycle gates must remain until an upstream replacement is accepted and the reciprocal acceptance is rerun.
 
 Native OMail remains decentralized: boat-to-boat/store-carry-forward OMail must not require Internet access or central Server availability. When traffic crosses between OMail and conventional public Internet mail, OceanMail-operated Server/infrastructure is the sole public SMTP/MX boundary. Internet-connected Stations/gateways do not become independent public MTAs or deliver directly to arbitrary Internet SMTP systems. See ADR-006.
 
@@ -153,13 +153,13 @@ preserving durable decisions; new summaries do not make older evidence current.
 - FCC regulatory path and authoritative clearance for the exact OceanMail HF test/deployment model, including licensing/equipment-authorization implications;
 - exact Grid quota/credit/pricing/resource-policy values and policy-distribution security details;
 - News source rights/object/cache/scheduling implementation details;
-- licensing/publication decisions for currently private 0.2 repositories.
+- ongoing attribution, dependency-license and publication hygiene for the five public repositories.
 
 ## Scheduling design update (2026-09-21)
 
 [ADR-008](docs/decisions/ADR-008-four-band-scheduling-and-channel-use.md) defines Bands 0–3: Emergency and its own control; public network coordination plus Server-promoted urgent public updates; ordinary local/relay mail metadata, control and payload; shared background broadcast data. Lease duration and normal Band 1 cap are independent tuning inputs, with a full-lease necessary route-establishment exception. Ten/four minutes are arithmetic examples, not selected defaults or a fixed 40% ratio. Band 2 uses remaining time. Band 3 has no reserved lease share and uses idle or announced broadcast opportunities.
 
-Rendezvous announcements lead to negotiated directed exchanges (Band 1 then Band 2 on the same channel) or shared time/channel-announced broadcasts. Single-radio listening and Emergency discovery/preemption must be bounded and validated. User/ship byte budgets, Station airtime budgets, local/relay fairness, and bounded relay acceptance remain required. This supersedes the six-band/reserved-slot drafts; implementation and runtime validation remain outstanding. Tracking is inconsistent: Station issue #22 is closed as of 2026-09-22, while the component PR #50 and current project records state that its first slice does not close the remaining work. A follow-up tracker is needed; the full ADR implementation is not complete.
+Rendezvous announcements lead to negotiated directed exchanges (Band 1 then Band 2 on the same channel) or shared time/channel-announced broadcasts. Single-radio listening and Emergency discovery/preemption must be bounded and validated. User/ship byte budgets, Station airtime budgets, local/relay fairness, and bounded relay acceptance remain required. This supersedes the six-band/reserved-slot drafts; implementation and runtime validation remain outstanding. The first scheduling slice does not complete the remaining work. A public follow-up tracker is needed; the full ADR implementation is not complete.
 
 ## Configurable lease controller (2026-09-22)
 
@@ -181,7 +181,7 @@ See [ADR-009](docs/decisions/ADR-009-personal-traffic-and-encryption.md). This r
 
 ## CI retrofit coordination
 
-G0/S1 and the S2 mechanical cleanup were accepted in the archive lineage. The owner has now assigned review and selective public porting of the remaining S3a tooling and its Project tracking. [The current port record](docs/quality/station-s3a-public-port.md) distinguishes the proposed public work from historical archive evidence. S3a is not yet accepted; no production baseline, required quality gate or branch enforcement is enabled. S3b/S4 require separate assignment.
+G0/S1 and the S2 mechanical cleanup are historical completed phases. S3a tooling and Project tracking merged on 2026-09-26. [The public port record](docs/quality/station-s3a-public-port.md) records scope, validation and the specific review exception. No production baseline, required quality gate or branch enforcement is enabled. S3b/S4 require separate assignment.
 
 
 ## Public implementation updates — 2026-09-26

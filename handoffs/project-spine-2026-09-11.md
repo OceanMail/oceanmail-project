@@ -14,9 +14,9 @@ Establish `OceanMail/oceanmail-project` as durable organization-level project me
 - preserved component-local implementation documentation rather than copying it into the spine;
 - updated Desktop, Station, Server, and Infrastructure documentation/agent instructions to point to the central spine;
 - explicitly marked Desktop Decision 0001's former program-authority assignment superseded;
-- corrected Station `CURRENT_STATUS.md` so merged PR #26 is no longer represented as under review;
-- merged project-spine integration PRs: Desktop #15, Station #27, Server #3, Infrastructure #3;
-- closed Desktop governance PR #14 as superseded by the central governance model;
+- corrected Station `CURRENT_STATUS.md` to reflect the accepted Available foundation;
+- integrated the project spine into Desktop, Station, Server and Infrastructure;
+- replaced the component-specific governance proposal with the central governance model;
 - left historical/frozen 0.1 and BEMPIC repositories intact because they are already clearly labeled and remain useful evidence.
 
 ## Current authority model

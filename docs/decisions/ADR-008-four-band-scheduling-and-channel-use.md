@@ -104,7 +104,7 @@ Existing Server accounting authority, no paid ordinary precedence, transport-own
 
 ## Implementation acceptance
 
-Station issue #22 remains open. Required evidence includes:
+Full implementation remains incomplete; the [Station workstream](../../workstreams/station.md) records the current experimental slice. Required evidence includes:
 
 - correct Bands 0–3 classification, including Emergency control in Band 0, public coordination in Band 1, ordinary manifests/receipts/control and local/relay payload in Band 2, and background broadcasts in Band 3;
 - full-lease necessary route establishment, yielding at expiry, progress/backoff across failed attempts, and return to the normal Band 1 cap;

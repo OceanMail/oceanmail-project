@@ -1,8 +1,8 @@
 # CI quality retrofit rollout
 
-Status: G0/S1/S2 accepted in the archive lineage; S3a review and selective public port assigned by the owner on 2026-09-26. Public S3a acceptance remains pending.
+Status: G0/S1/S2 are historical completed phases. Public S3a tooling and tracking merged on 2026-09-26; no baseline or CI enforcement is activated.
 Prepared 2026-09-22 from the owner-supplied OceanMail CI retrofit kit.
-Updated 2026-09-26 to reconcile archive tracking with public development.
+Updated 2026-09-26 to reflect the public S3a merges.
 See [the public port record](../quality/station-s3a-public-port.md). Dated
 measurements below remain historical and do not validate new public heads.
 
@@ -11,6 +11,8 @@ measurements below remain historical and do not validate new public heads.
 Codex implements, ChatGPT plans/triages, Claude independently reviews **every**
 retrofit PR against its exact base/head, and the owner decides merge/protection.
 A draft PR or green check does not authorize merge or another phase.
+The [S3a record](../quality/station-s3a-public-port.md) documents the specific
+owner-approved repeat-review exception for that completed closeout.
 Station precedes Desktop, followed by documentation-only Server, Infrastructure
 and Project gates. G0 is the coordination prerequisite, not Project lint rollout.
 No component implementation internals are copied here.
@@ -57,8 +59,8 @@ metrics still need measurement. No repository is declared retrofit-complete.
 | `oceanmail-desktop` | `4931be00f3df1398c53d032b21863985918fb75f` | Active | Not started / Codex | Unknown | Unknown | See task register / inventory only / none |
 | `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 | `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
-| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a proposed / Codex | (S1, historical) Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
-| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0/S2 tracking accepted historically; public S3a tracking proposed / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
+| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a merged / Codex | (S1, historical) Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
+| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0/S2 tracking accepted historically; public S3a tracking merged / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 
 Station source/tooling measurement was sealed at
 `2f22edba9a57ae7782fec0f9f27b81f555eaaed5`; subsequent commits add only the
@@ -81,15 +83,15 @@ an open public PR or authorization for subsequent work.
 Each listed ID is a separate bounded concern (parameterized fixes/burn-downs
 are separate PRs per bug/module). Every row has an accountable owner and status.
 Codex-owned tasks also have Claude review and ChatGPT triage; human operations
-remain the owner's work. G0/S1/S2 are accepted historically; the public S3a port is currently assigned. Future issue/PR
+remain the owner's work. G0/S1/S2 are accepted historically; the public S3a port is merged. Future issue/PR
 links are pending rather than fabricated.
 
 | Task / repository | Concern | Owner | Status / next evidence |
 | --- | --- | --- | --- |
-| G0 / Project | Governance, inventory, phase register | Codex | Archive merged #44 at `0a55c1ee5b77d6637c4b181150c17819bab572e0`; #43 |
-| S1 `quality/measure` / Station | Phase 1 report-only tooling and scope: pin compatible tools, identify feature/target/test matrix; collect Rust, shell, Python, lab/static, Semgrep and dependency measurements; update local agent commands. | Codex | Archive merged #54 at `8aced292c745fb8c81af387f57c1a92246198a74`; original measurements retained; actual-main acceptance recorded with S2 |
-| S2 `quality/mechanical` / Station | Phase 2, title `Mechanical cleanup — no logic changes`. cargo fmt plus reviewed safe Python/shell formatting where applicable. No cargo clippy --fix by default. | Codex | Archive #57 merged at `040d326deb677708c6a8224b5b94f8ec0688992e`; Project archive #45 merged at `c52a08e0868f8cd217b04b38fb8ebb0981d0700f`; [historical evidence](../quality/station-s2-2026-09-23.md) |
-| S3a `quality/ratchet-adapters` / Station | Tooling only: implement/test Clippy, shellcheck, Python type, audit and config/suppression adapters described in CI-CONTRACT.md. No production cleanup or baseline seeding. | Codex | Public port assigned; draft acceptance pending; [current record](../quality/station-s3a-public-port.md) |
+| G0 / Project | Governance, inventory, phase register | Codex | Completed historically; governance and phase register retained here |
+| S1 `quality/measure` / Station | Phase 1 report-only tooling and scope: pin compatible tools, identify feature/target/test matrix; collect Rust, shell, Python, lab/static, Semgrep and dependency measurements; update local agent commands. | Codex | Completed historically; original measurements retained; subsequent acceptance summarized with S2 |
+| S2 `quality/mechanical` / Station | Phase 2, title `Mechanical cleanup — no logic changes`. cargo fmt plus reviewed safe Python/shell formatting where applicable. No cargo clippy --fix by default. | Codex | Completed historically; [self-contained evidence summary](../quality/station-s2-2026-09-23.md) |
+| S3a `quality/ratchet-adapters` / Station | Tooling only: implement/test Clippy, shellcheck, Python type, audit and config/suppression adapters described in CI-CONTRACT.md. No production cleanup or baseline seeding. | Codex | Public tooling merged; no baseline or enforcement; [current record](../quality/station-s3a-public-port.md) |
 | S3b `quality/baseline` / Station | Freeze measured residual diagnostics; exact targeted expected failures/issues if any; README ledger and type/lint policies. | Codex | Not started; requires separate assignment |
 | S4 `quality/ci` / Station | Instantiate ci-rust-station.yml plus shell/Python fragment and actual locked configs. Integrate existing auth/readiness tests. Preserve Phase 3 and Phase 4I jobs; remove no evidence checks. | Codex | Not started; requires separate assignment |
 | S5 human / Station | Branch protection and runner boundary verification, not an agent PR. | Owner | Not started; requires separate assignment |
@@ -141,7 +143,7 @@ runners. An active-code repo is complete only after verified required CI,
 documented baseline, characterization of identified high-risk gaps, triaged
 audit findings and current burn-down evidence. Documentation-only repositories
 require a source-introduction guard and mark product characterization N/A.
-Archives are excluded/historical, not CI-complete.
+Historical measurements do not establish current CI completeness.
 
 ## Kit provenance
 

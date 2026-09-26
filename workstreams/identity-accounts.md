@@ -27,7 +27,7 @@ Detailed cross-component constraints are in [`../docs/specifications/constrained
 
 ## Current implementation state
 
-Station production authentication work is the foundational authenticated permission-scoped API/account identity work. Issue #24 is blocked on it. Production storage/key-separation remains independently unresolved.
+Station production authentication work is the foundational authenticated permission-scoped API/account identity work. The Available/retrieval/ledger API is blocked on it. Production storage/key-separation remains independently unresolved.
 
 Station and
 Desktop have merged the

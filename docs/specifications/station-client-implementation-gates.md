@@ -1,23 +1,18 @@
 # Station/client implementation gates
 
-Status: current blocker/implementation handoff, 2026-09-21. This records existing
+Status: architectural gates retained from 2026-09-21; public references refreshed 2026-09-26. This records existing
 accepted constraints and open decisions; it does not approve a production model.
 
 ## Merged laboratory work and remaining reviews
 
-Station #47 merged after current-base Phase 4I run `35559385475` passed,
-in addition to the prior repeated no-radio readiness/receipt proof and resolved review.
-Station #48 has merged #23's bounded Phase 4J laboratory credential/context
-slice; merged Desktop #22 consumes its actual endpoints. Desktop #24's bounded
-CI also merged.
+The public Station snapshot includes bounded readiness-gate hardening and the
+Phase 4J laboratory credential/context slice. Desktop consumes those endpoints
+and includes bounded CI. See the [Station auth foundation](https://github.com/OceanMail/oceanmail-station/blob/main/docs/PHASE4J_AUTH_FOUNDATION.md).
 
-Desktop #23 remains open for actual Thunderbird Hold/Resume and attachment-only
-ordering acceptance. Its refreshed-head run `35559386545` passed and its review
-finding is resolved. Owner authorization to merge ready work was given on
-2026-09-21; required live acceptance remains separate.
-
-The merged slices are laboratory capability, not production approval. Exact
-heads and CI are recorded in the component PRs and CURRENT_STATE.md.
+Actual Thunderbird Hold/Resume and attachment-only ordering acceptance remains
+outstanding. Historical CI does not replace that live acceptance.
+The merged slices are laboratory capability, not production approval.
+[CURRENT_STATE.md](../../CURRENT_STATE.md) records current public implementation status.
 
 ## BLOCKED / ARCHITECTURAL DECISION REQUIRED
 
@@ -71,7 +66,7 @@ There is no authoritative account ledger from which to infer spend eligibility.
 
 - Continue pure/synthetic lab validation behind explicit laboratory labels while
   keeping all production gates false. This is useful testing, not real manifests
-  or a promise of completion of #24.
+  or a promise of a production Available/retrieval/ledger API.
 - Select and record the narrow production identity/trust/storage/lifetime slice,
   then implement real holder ingestion, private durable plans and accounting
   consumption under those accepted rules.
