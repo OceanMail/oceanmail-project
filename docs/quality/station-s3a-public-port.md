@@ -28,7 +28,7 @@ accept S3a or authorize S3b/S4.
 ## Review and evidence
 
 Implementation details and reproduction commands belong in Station's
-[public S3a handoff](https://github.com/OceanMail/oceanmail-station/blob/codex/quality-ratchet-port/.quality/S3A-HANDOFF.md).
+[public S3a handoff](https://github.com/OceanMail/oceanmail-station/blob/54251d51f6dcc34ea2dce7b8bc7d6a46d9c40a70/.quality/S3A-HANDOFF.md).
 The port review found and fixed measurement of multi-option ShellCheck disable
 comments, with a regression test. Historical archive counts are not current
 public results. Exact final heads, fresh local evidence and hosted workflow
@@ -42,3 +42,17 @@ Independent Claude review of each exact public base/head remains required by
 AGENTS.md and the retrofit specification, followed by owner acceptance. A green
 workflow does not satisfy that review. No production suppression/advisory ledger,
 baseline, required quality workflow or protection setting is introduced.
+
+## Independent review follow-up
+
+Claude independently reviewed Station `8fa010c24beb2b639350991a21ed14406f1c633c`
+and Project `7e7dcb8bf808d87fcf1cc292ae4e478e63e6a37c` on 2026-09-26. Station
+required accurate test-inventory/proxy-provenance limits, additional Python skip
+detection and disabled rustup auto-install. Project required a permanent handoff
+link; the link above now uses the corrected Station commit, surviving branch retirement.
+
+The follow-up also narrows the Python import path, repairs ShellCheck trailing-reason
+measurement, and removes an unverified database-age guarantee. The Station handoff
+records the disposition. These corrections require a new exact-head delta review;
+the earlier review is not approval of later commits. Other optional improvements
+and future S3b/S4 requirements remain deferred. Owner acceptance is still pending.
