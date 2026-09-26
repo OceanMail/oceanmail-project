@@ -126,4 +126,4 @@ Band 1 is public discovery/route/access coordination plus authorized urgent publ
 
 ## CI retrofit
 
-Station is the first application measurement/ratchet target after G0. S1 is report-only; [the central tracker](../docs/specifications/ci-quality-retrofit.md) records scope, owners and evidence. Upstream compatibility and lifecycle changes require their own review and integration evidence. No physical-radio work or later retrofit phase is authorized.
+Station remains the first application measurement/ratchet target. G0/S1/S2 were accepted in the archive lineage; the owner has assigned review and selective porting of the remaining S3a tooling into the public repositories. [The public port record](../docs/quality/station-s3a-public-port.md) and [central tracker](../docs/specifications/ci-quality-retrofit.md) record scope and acceptance gates. S3a remains proposed, with no baseline or CI enforcement activation. S3b/S4 and physical-radio work are not authorized by this port.
