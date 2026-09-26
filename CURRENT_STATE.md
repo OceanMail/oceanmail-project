@@ -181,7 +181,7 @@ See [ADR-009](docs/decisions/ADR-009-personal-traffic-and-encryption.md). This r
 
 ## CI retrofit coordination
 
-G0 registers the [rollout and measurement tracker](docs/specifications/ci-quality-retrofit.md). Station S1 is first: report-only tooling and exact-head evidence. No baseline, required quality gate or branch enforcement is established by this governance work. Work beyond S1 awaits separate owner direction.
+G0/S1 and the S2 mechanical cleanup were accepted in the archive lineage. The owner has now assigned review and selective public porting of the remaining S3a tooling and its Project tracking. [The current port record](docs/quality/station-s3a-public-port.md) distinguishes the proposed public work from historical archive evidence. S3a is not yet accepted; no production baseline, required quality gate or branch enforcement is enabled. S3b/S4 require separate assignment.
 
 
 ## Public implementation updates — 2026-09-26

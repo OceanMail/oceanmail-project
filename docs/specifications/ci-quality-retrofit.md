@@ -1,10 +1,10 @@
 # CI quality retrofit rollout
 
-Status: G0 and Station S1 merged by owner; Station S2 authorized in #56 and in draft review. S3a remains unassigned.
+Status: G0/S1/S2 accepted in the archive lineage; S3a review and selective public port assigned by the owner on 2026-09-26. Public S3a acceptance remains pending.
 Prepared 2026-09-22 from the owner-supplied OceanMail CI retrofit kit.
-Updated 2026-09-23 for owner-merged G0/S1 and assigned Station S2.
-Public documentation cleanup does not advance or authorize a retrofit phase.
-The measurements and phase statuses below are dated historical context.
+Updated 2026-09-26 to reconcile archive tracking with public development.
+See [the public port record](../quality/station-s3a-public-port.md). Dated
+measurements below remain historical and do not validate new public heads.
 
 ## Scope and authority
 
@@ -57,7 +57,7 @@ metrics still need measurement. No repository is declared retrofit-complete.
 | `oceanmail-desktop` | `4931be00f3df1398c53d032b21863985918fb75f` | Active | Not started / Codex | Unknown | Unknown | See task register / inventory only / none |
 | `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 | `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
-| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1 merged; S2 draft / Codex; Claude review pending | Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
+| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a proposed / Codex | Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
 | `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0 merged; S2 tracking draft / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 
 Station source/tooling measurement was sealed at
@@ -81,15 +81,15 @@ an open public PR or authorization for subsequent work.
 Each listed ID is a separate bounded concern (parameterized fixes/burn-downs
 are separate PRs per bug/module). Every row has an accountable owner and status.
 Codex-owned tasks also have Claude review and ChatGPT triage; human operations
-remain the owner's work. G0 and S1 are merged; S2 is currently assigned. Future issue/PR
+remain the owner's work. G0/S1/S2 are accepted historically; the public S3a port is currently assigned. Future issue/PR
 links are pending rather than fabricated.
 
 | Task / repository | Concern | Owner | Status / next evidence |
 | --- | --- | --- | --- |
 | G0 / Project | Governance, inventory, phase register | Codex | Merged #44 at `0a55c1ee5b77d6637c4b181150c17819bab572e0`; #43 |
 | S1 `quality/measure` / Station | Phase 1 report-only tooling and scope: pin compatible tools, identify feature/target/test matrix; collect Rust, shell, Python, lab/static, Semgrep and dependency measurements; update local agent commands. | Codex | Merged #54 at `8aced292c745fb8c81af387f57c1a92246198a74`; original measurements retained; actual-main acceptance recorded with S2 |
-| S2 `quality/mechanical` / Station | Phase 2, title `Mechanical cleanup — no logic changes`. cargo fmt plus reviewed safe Python/shell formatting where applicable. No cargo clippy --fix by default. | Codex | Authorized #56; draft #57; [before/after and CI evidence](../quality/station-s2-2026-09-23.md); Claude review pending |
-| S3a `quality/ratchet-adapters` / Station | Tooling only: implement/test Clippy, shellcheck, Python type, audit and config/suppression adapters described in CI-CONTRACT.md. No production cleanup or baseline seeding. | Codex | Not started; requires separate assignment |
+| S2 `quality/mechanical` / Station | Phase 2, title `Mechanical cleanup — no logic changes`. cargo fmt plus reviewed safe Python/shell formatting where applicable. No cargo clippy --fix by default. | Codex | Archive #57 merged at `040d326deb677708c6a8224b5b94f8ec0688992e`; Project archive #45 merged at `c52a08e0868f8cd217b04b38fb8ebb0981d0700f`; [historical evidence](../quality/station-s2-2026-09-23.md) |
+| S3a `quality/ratchet-adapters` / Station | Tooling only: implement/test Clippy, shellcheck, Python type, audit and config/suppression adapters described in CI-CONTRACT.md. No production cleanup or baseline seeding. | Codex | Public port assigned; draft acceptance pending; [current record](../quality/station-s3a-public-port.md) |
 | S3b `quality/baseline` / Station | Freeze measured residual diagnostics; exact targeted expected failures/issues if any; README ledger and type/lint policies. | Codex | Not started; requires separate assignment |
 | S4 `quality/ci` / Station | Instantiate ci-rust-station.yml plus shell/Python fragment and actual locked configs. Integrate existing auth/readiness tests. Preserve Phase 3 and Phase 4I jobs; remove no evidence checks. | Codex | Not started; requires separate assignment |
 | S5 human / Station | Branch protection and runner boundary verification, not an agent PR. | Owner | Not started; requires separate assignment |
