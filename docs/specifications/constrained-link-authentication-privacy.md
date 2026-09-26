@@ -101,7 +101,7 @@ Historical OceanMail research examined Winlink and SailMail as prior art. The du
 - radio-email systems may deliberately operate with monitorable content while still preventing arbitrary mailbox access;
 - external-service rules remain binding when OceanMail carries or bridges traffic for that service.
 
-Current OceanMail 0.2 does not make Winlink or SailMail interoperability part of the critical path; see the historical `oceanmail-0.1-prototype/GREAT_PARALLEL_WORK.md` for that research.
+Current OceanMail 0.2 does not make Winlink or SailMail interoperability part of the critical path. These are research topics, not current interoperability commitments.
 
 ## Ownership
 

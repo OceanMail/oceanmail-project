@@ -29,7 +29,7 @@ Current implementation repositories:
 - [`OceanMail/oceanmail-server`](https://github.com/OceanMail/oceanmail-server)
 - [`OceanMail/oceanmail-infrastructure`](https://github.com/OceanMail/oceanmail-infrastructure)
 
-Historical and frozen repositories are cataloged in [`REPOSITORIES.md`](REPOSITORIES.md).
+The five public repositories are cataloged in [`REPOSITORIES.md`](REPOSITORIES.md).
 
 ## Documentation rule
 
@@ -42,7 +42,7 @@ See the [CI quality retrofit specification and tracker](docs/specifications/ci-q
 
 ## Contribution and release status
 
-OceanMail 0.2 is experimental, not production-ready or certified distress equipment. Public contribution is being prepared under [master #42](https://github.com/OceanMail/oceanmail-project-archive/issues/42). See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [pending license decisions](docs/specifications/publication-decisions.md). Source and documentation licenses are installed; see [LICENSING.md](LICENSING.md). This repository contains documentation; component build/test instructions belong in their respective repositories. Validate changed relative links and JSON before submitting a documentation PR.
+OceanMail 0.2 is experimental, not production-ready or certified distress equipment. Contributors can fork and submit pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [publication decisions](docs/specifications/publication-decisions.md). Source and documentation licenses are installed; see [LICENSING.md](LICENSING.md). This repository contains documentation; component build/test instructions belong in their respective repositories. Validate changed relative links and JSON before submitting a documentation PR.
 
 
 ## Source publication and licenses

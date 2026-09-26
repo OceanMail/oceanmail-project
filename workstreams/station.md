@@ -50,20 +50,27 @@ No-radio work is complete through Phase 4I, including returned receipt correlati
 
 A nondeterministic Phase 4I readiness failure observed during PR #25 passed on immediate rerun at the exact same source/head; issue #42 was closed by merged PR #47 after bounded readiness-gate hardening and current-base integration validation without weakening the evidence contract.
 
-[Station PR #50](https://github.com/OceanMail/oceanmail-station-archive/pull/50) merged on 2026-09-22 as `ec9e5f232aac722bae25a979098100cc3c0dbaf9`, adding the first in-memory GRID/CONTROL lease policy slice for issue #22. Lease duration and normal control allowance are independent inputs, without selected ten/four-minute defaults or a fixed 40% ratio. All 22 local Rust tests passed on implementation head `edf036b9127f1e4c7258e721b8d98573d018386c`. Final source head `19610ba46c916eb01de83bb10053d30683972cf6` passed Phase 4J run `35744903091` and Phase 4I run `35744903108`; the numeric-default documentation finding is resolved. These are unit and existing integration-regression results, not live scheduler or RF validation. The controller is not connected to daemon transport dispatch. Persistent fairness/accounting, route-attempt backoff admission, traffic classification and channel coordination remain outstanding. GitHub issue #22 closed on 2026-09-22 despite PR #50 explicitly stating that its first slice does not close #22; a follow-up tracker is needed. Component contract: [LEASE_CONTROLLER.md](https://github.com/OceanMail/oceanmail-station/blob/main/docs/LEASE_CONTROLLER.md).
+The in-memory lease controller is supplemented by public
+[Station PR #1](https://github.com/OceanMail/oceanmail-station/pull/1), merged on
+2026-09-26: traffic classification, route-attempt backoff, Band 2 selection and a
+deterministic no-radio harness, plus auth regression tests. These modules are
+experimental and not connected to daemon transport dispatch. Restart-durable
+accounting, capacity-tier integration, channel coordination and live validation
+remain outstanding. See
+[LEASE_CONTROLLER.md](https://github.com/OceanMail/oceanmail-station/blob/main/docs/LEASE_CONTROLLER.md).
 
 Current follow-on work:
 
-Merged laboratory implementation: [Station #48](https://github.com/OceanMail/oceanmail-station-archive/pull/48)
+Merged laboratory implementation: Station
 is the first loopback-only Phase 4J slice of #23, not the production identity or
-LAN release gate. [Station #47](https://github.com/OceanMail/oceanmail-station-archive/pull/47)
+LAN release gate. Station
 merged as `65d75cb96b0b1247f598c49a60a11b8cba68e5b8` after current-base Phase 4I run `35559385475` passed. Receipt trust remains laboratory-only. See
 [`station-client-implementation-gates.md`](../docs/specifications/station-client-implementation-gates.md)
 before proceeding from lab context to private Available/plan/accounting state.
 
 - issue #23 authenticated permission-scoped API/account identity;
 - issue #24 account-scoped Available/retrieval/ledger API after #23;
-- ADR-008 scheduler follow-on: implement Bands 0–3, Band 1 cap/route exception, Band 2 local/relay fairness, unreserved broadcasts, and negotiated/single-radio channel behavior within ADR-007's capacity tiers, survival behavior, and authorization gates. The prior tracking issue #22 is closed; create or designate a follow-up tracker before assigning implementation;
+- ADR-008 scheduler follow-on: implement Bands 0–3, Band 1 cap/route exception, Band 2 local/relay fairness, unreserved broadcasts, and negotiated/single-radio channel behavior within ADR-007's capacity tiers, survival behavior, and authorization gates. Track each remaining implementation slice in a public issue before assigning it;
 - production encrypted storage/per-user key separation;
 - Grid/control, relay/gateway, accounting/scheduling, API expansion;
 - authenticated Station/Server gateway exchange consistent with ADR-006;
@@ -119,6 +126,4 @@ Band 1 is public discovery/route/access coordination plus authorized urgent publ
 
 ## CI retrofit
 
-Station is the first application measurement/ratchet target after [G0](https://github.com/OceanMail/oceanmail-project-archive/issues/43). [S1](https://github.com/OceanMail/oceanmail-station-archive/issues/53) is report-only; [the central tracker](../docs/specifications/ci-quality-retrofit.md) records scope, owners and evidence. Existing upstream candidate PRs #51/#52 retain independent review/evidence lineage. No physical-radio work or later retrofit phase is authorized.
-
-
+Station is the first application measurement/ratchet target after G0. S1 is report-only; [the central tracker](../docs/specifications/ci-quality-retrofit.md) records scope, owners and evidence. Upstream compatibility and lifecycle changes require their own review and integration evidence. No physical-radio work or later retrofit phase is authorized.

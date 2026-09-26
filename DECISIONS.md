@@ -1,34 +1,24 @@
-# OceanMail Decision Ledger
+# OceanMail Decisions
 
-> Publication scope update — 2026-09-26: the owner approved fresh public repositories for **all five active components: Project, Station, Desktop, Server and Infrastructure**. Preserve the original repositories privately with `-archive` suffixes. The five older BEMPIC/0.1 repositories remain private and frozen. Earlier three-repository scope statements below are superseded historical records.
+## 2026-09-26 — Public source and contributor documentation
 
+**Decision:** Project, Station, Desktop, Server and Infrastructure are public.
+Code uses AGPL-3.0-only and documentation CC-BY-SA-4.0, with third-party terms
+preserved. No DCO or additional inbound agreement is adopted. Contributors use
+forks/topic branches and PRs; maintainers merge with protected main and required
+checks. Zero required approving reviews is the approved setting.
 
-> Current publication decision (2026-09-26): create fresh sanitized Project, Station and Desktop repositories with installed licenses. Preserve the original repositories privately under names ending in `-archive`. See [PUBLICATION.md](PUBLICATION.md). Earlier in-place conversion instructions and pending-license statements below are historical.
+**Documentation:** Public readers must be able to understand the project from the
+five public repositories alone. Remove unavailable historical repository links,
+inventories and access instructions; retain technical rationale in accessible docs.
+Supersedes the earlier three-component publication proposal and pending-license wording.
 
+**Privacy:** Keep personal and operational information out of public source and
+metadata; preserve third-party attribution. No patents by default; prefer meaningful
+open disclosures. Source publication does not approve production services, binary
+redistribution or RF operation. External-fork acceptance remains unverified.
 
-This ledger is the inexpensive place to preserve small-to-medium project decisions and clarifications. Significant architecture decisions receive an ADR under `docs/decisions/`.
-
-## 2026-09-26 — Earlier narrowed publication scope (superseded)
-
-**Owner direction (2026-09-25):** only Project, Station and Desktop are being prepared for publication, in that priority order. Server and Infrastructure remain private. This supersedes the earlier five-repository publication scope, while privacy/document review remains organization-wide. Archived repositories remain historical; no development restart is authorized.
-
-## 2026-09-26 — Publication privacy disposition and approved choices
-
-**Owner direction (2026-09-25):** remove personal data and private runner information before publication. Review all ten organization repositories, including frozen archives. Current-file redaction alone does not satisfy the history, GitHub-surface, log/artifact or cached-copy gates. Keep active repositories private until all gates pass. Preserve restricted recovery evidence and third-party attribution; no unrelated historical feature development is authorized.
-
-**Approved:** AGPL-3.0-only for OceanMail-owned code; CC-BY-SA-4.0 for documentation, subject to rights/compatibility review. Required approving review count is zero, with PRs, required checks and maintainer-only merges still required. These choices do not assert that license files/settings are applied. DCO/inbound contribution terms and authority over existing contributions remain separate unresolved items.
-
-**Execution boundary:** current-file and discussion cleanup can proceed through supported repository operations. Full history/identity rewriting, GitHub-managed refs/caches, archived-repository edits and retained artifact/log removal require appropriate authenticated Git/admin access. No complete erasure or publication clearance is claimed.
-
-## 2026-09-25 — Public fork/PR collaboration and defensive publication
-
-**Status:** Collaboration policy retained; five-repository publication scope superseded by the narrowed scope above.
-
-Prepare Project, Station, Server, Desktop and Infrastructure for public access in that order. Outsiders, including Rafael, normally contribute through forks/PRs without write access. Maintainers control merges; retain merge commits and rollback history. Use standard GitHub-hosted public PR CI; exclude public repositories from trusted self-hosted runners and local workstations at the runner access boundary.
-
-No patents by default. Prefer technically meaningful open/defensive publication, preserving prior-art and upstream attribution. License/contributor terms and historical privacy disposition remain pending. The owner authorized preparation and safe completed-work merges; this does not waive publication gates or grant a license.
-
-See [public collaboration policy](docs/specifications/public-collaboration.md), [pending decisions](docs/specifications/publication-decisions.md), and [master issue #42](https://github.com/OceanMail/oceanmail-project-archive/issues/42). This supersedes earlier uncertainty about whether the five active repositories should be prepared for public contribution; it does not claim they have become public or that sensitive operational material may be exposed.
+See [PUBLICATION.md](PUBLICATION.md) and [public collaboration](docs/specifications/public-collaboration.md).
 
 ## 2026-09-22 — Personal mail control in Band 2 and encryption boundaries
 
@@ -258,4 +248,3 @@ Gateway policy is independent of relay willingness and uses **Full**, **Minimal*
 **Affected components:** BEMPIC, historical 0.1 stack, Station STORE / TRANSPORT, future GRID / CONTROL.
 
 **Status:** ACTIVE program decision; BEMPIC itself is FROZEN.
-

@@ -16,10 +16,10 @@ Status: CURRENT
 
 ### Phase 4J context-only lab integration (merged laboratory implementation)
 
-[Station #48](https://github.com/OceanMail/oceanmail-station-archive/pull/48) implements
+Station implements
 `GET /api/v1/auth/context` and
 `GET /api/v1/accounts/{account_id}/auth/context`, consumed by the explicit lab
-adapter in [Desktop #22](https://github.com/OceanMail/oceanmail-desktop-archive/pull/22).
+adapter in Desktop.
 The Station authenticates a runtime-provisioned laboratory credential and
 enforces explicit permissions before returning server-derived Station/user/role,
 independent device-trust state and account grants. The account endpoint requires

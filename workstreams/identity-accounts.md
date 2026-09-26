@@ -27,10 +27,10 @@ Detailed cross-component constraints are in [`../docs/specifications/constrained
 
 ## Current implementation state
 
-Station issue #23 is the foundational authenticated permission-scoped API/account identity work. Issue #24 is blocked on it. Production storage/key-separation remains independently unresolved.
+Station production authentication work is the foundational authenticated permission-scoped API/account identity work. Issue #24 is blocked on it. Production storage/key-separation remains independently unresolved.
 
-[Station #48](https://github.com/OceanMail/oceanmail-station-archive/pull/48) and
-[Desktop #22](https://github.com/OceanMail/oceanmail-desktop-archive/pull/22) have merged the
+Station and
+Desktop have merged the
 bounded Phase 4J lab-context implementation/consumer. Runtime-provisioned tokens
 are not production enrollment, device-bound proof, a protected credential store
 or disconnected authorization policy. No real multi-user/LAN release is implied.

@@ -31,16 +31,16 @@ Native OMail transport, relay/store-and-forward execution, durable local transfe
 
 ## Current implementation state
 
-The active 0.2 Server repository is intentionally small/bootstrap. The historical `oceanmail-server-0.1-prototype` contains reusable auth/queue/security work but is not current authority.
-
-An open historical-repo MFA PR exists as a carry-forward candidate. It must be deliberately ported/revalidated against active 0.2 Server architecture rather than merged conceptually by inheritance.
+The active 0.2 Server repository is a public documentation/bootstrap repository.
+Production authentication, MFA, queues and persistence require implementation and
+validation against current contracts.
 
 The preliminary low-bandwidth News direction is preserved in `docs/specifications/news-feed.md`: bounded curated RSS/Atom ingestion, Server-side text-first normalization/provenance/source policy, and future Grid caching only after rights/object/cache/scheduling questions are settled. It is not implementation-ready and does not authorize global feed mirroring or speculative mesh replication.
 
 ## Major outstanding work
 
 - define the narrow authenticated Station/Server and direct-client/Server service contracts;
-- settle production account/identity/authentication boundaries with Station issue #23 work;
+- settle production account/identity/authentication boundaries with Station production authentication work work;
 - define device credential/revocation, constrained-link replay resistance, and recoverable/idempotent destructive-mailbox semantics without transmitting reusable mailbox secrets over shared radio links;
 - implement hosted mailbox/account/service foundations;
 - implement centralized public SMTP/MX ingress/egress with durable queueing, destination retry, bounce handling, DKIM/SPF/DMARC alignment, reputation, and abuse/rate controls;

@@ -3,9 +3,8 @@
 Status: G0 and Station S1 merged by owner; Station S2 authorized in #56 and in draft review. S3a remains unassigned.
 Prepared 2026-09-22 from the owner-supplied OceanMail CI retrofit kit.
 Updated 2026-09-23 for owner-merged G0/S1 and assigned Station S2.
-Tracking: [Project #43](https://github.com/OceanMail/oceanmail-project-archive/issues/43),
-[Station #53](https://github.com/OceanMail/oceanmail-station-archive/issues/53),
-[Station #56](https://github.com/OceanMail/oceanmail-station-archive/issues/56).
+Public documentation cleanup does not advance or authorize a retrofit phase.
+The measurements and phase statuses below are dated historical context.
 
 ## Scope and authority
 
@@ -14,7 +13,7 @@ retrofit PR against its exact base/head, and the owner decides merge/protection.
 A draft PR or green check does not authorize merge or another phase.
 Station precedes Desktop, followed by documentation-only Server, Infrastructure
 and Project gates. G0 is the coordination prerequisite, not Project lint rollout.
-No component implementation internals are copied here. Archives stay untouched.
+No component implementation internals are copied here.
 
 ## Baseline and evidence policy
 
@@ -47,53 +46,35 @@ approved bug proves red-to-green. No application changes in measurement tasks.
 
 ## Verified inventory and count tracker
 
-Live GitHub repository metadata, default-branch commits and recursive trees are
-captured in [inventory-2026-09-22.json](../quality/inventory-2026-09-22.json).
-Five active, five archived; archive administration was not changed. The SHA is
-an inventory snapshot, not a test result. All unmeasured lint/type/Semgrep/advisory and test
+Pre-publication component measurements are summarized in [inventory-2026-09-22.json](../quality/inventory-2026-09-22.json).
+The five public components are listed; these historical SHAs are not current public heads or test results. All unmeasured lint/type/Semgrep/advisory and test
 exception counts remain **unknown**. Station S1 measurements are linked below;
 the other repositories have inventory-only evidence. Docs-only application type/test/coverage metrics are **N/A**; tooling
 metrics still need measurement. No repository is declared retrofit-complete.
 
 | Repository | Inventory / measured SHA | State | Phase / owner | Lint / types / security / test exceptions | Coverage by module | Next / evidence / last measurement |
 | --- | --- | --- | --- | --- | --- | --- |
-| `bempic` | `819bfd34e14822960afb969fc14980293a59bac5` | Archived | Excluded / owner | Historical; unmeasured | Historical; unmeasured | No changes / inventory only / none |
-| `bempic-reference` | `c182f1dd42d64e3117e505904ce06696057ee9c3` | Archived | Excluded / owner | Historical; unmeasured | Historical; unmeasured | No changes / inventory only / none |
-| `oceanmail-0.1-prototype` | `5761fdf5a823e5ae7ccb1d81846a19156b87ed73` | Archived | Excluded / owner | Historical; unmeasured | Historical; unmeasured | No changes / inventory only / none |
-| `oceanmail-infrastructure-0.1-prototype` | `5daf16ae0501df603d11bf29cdf0b748e72ec22b` | Archived | Excluded / owner | Historical; unmeasured | Historical; unmeasured | No changes / inventory only / none |
-| `oceanmail-server-0.1-prototype` | `3d2bebc47e6c918fc7270e2fcec392b10b7d5542` | Archived | Excluded / owner | Historical; unmeasured | Historical; unmeasured | No changes / inventory only / none |
 | `oceanmail-desktop` | `4931be00f3df1398c53d032b21863985918fb75f` | Active | Not started / Codex | Unknown | Unknown | See task register / inventory only / none |
 | `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 | `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
-| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1 merged; S2 draft / Codex; Claude review pending | Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station-archive/blob/f9c4fc6ca392d99f110fa18e892c70f5f757da11/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | [Merged #54](https://github.com/OceanMail/oceanmail-station-archive/pull/54) / S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
+| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1 merged; S2 draft / Codex; Claude review pending | Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
 | `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0 merged; S2 tracking draft / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 
 Station source/tooling measurement was sealed at
 `2f22edba9a57ae7782fec0f9f27b81f555eaaed5`; subsequent commits add only the
 measurement document/raw archive and correct a Clippy target label. A clean final-head rerun reproduces the same
 test outcomes, diagnostic totals and per-file coverage. See the
-[component report and raw archive](https://github.com/OceanMail/oceanmail-station-archive/blob/f9c4fc6ca392d99f110fa18e892c70f5f757da11/docs/quality/S1-MEASUREMENT.md).
+[historical component report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md).
 The strict Python total includes 67 existing helper diagnostics and 229 new
 measurement-tool diagnostics under the provisional strict configuration; no
 baseline acceptance is implied. Hadolint remains partial on one Dockerfile.
 No product or test-source change was made to improve measurements.
 
-Existing no-radio `workflow_dispatch` runs on that exact final Station head:
-[Phase 3](https://github.com/OceanMail/oceanmail-station-archive/actions/runs/35790761626),
-[Phase 4I](https://github.com/OceanMail/oceanmail-station-archive/actions/runs/35790764446),
-[Phase 4J](https://github.com/OceanMail/oceanmail-station-archive/actions/runs/35790767763).
-All three completed successfully on 2026-09-22 using a private CI environment, with the exact final head above. Phase 4I retains its durable
-snapshot, exact far-side mailbox, cleanup, negative pre-return, byte-identical
-receipt, correlation and restart assertions; trust remains
-`lab_peer_transport_unverified`. Logs and artifacts are retained in the component
-PR review handoff. Earlier unstarted dispatches on the superseded documentation
-head were cancelled and provide no acceptance evidence. No synthetic-merge run
-exists for that path-filtered S1 diff. The owner subsequently merged #54 at
-`8aced292c745fb8c81af387f57c1a92246198a74` and authorized S2 in #56.
-Actual-main post-merge acceptance was missing and is now recorded separately
-as workflow_dispatch in the [S2 evidence](../quality/station-s2-2026-09-23.md);
-it is not main-push evidence. S2 draft #57 requires independent Claude review;
-S3a remains unauthorized.
+Historical no-radio checks were reported for Phase 3, 4I and 4J. They do not
+establish results for current public commits. Phase 4I retains laboratory trust
+`lab_peer_transport_unverified`. Use public Actions runs for current acceptance.
+The [S2 summary](../quality/station-s2-2026-09-23.md) is also historical, not
+an open public PR or authorization for subsequent work.
 
 ## Separate task register
 
@@ -175,4 +156,3 @@ commands/configuration/reports belong in their owning repositories.
 | `CI-CONTRACT.md` | `49427a0eca9653d670ba7e2a6bff7e4d9e49c54ae23f7d517f0397ebfe5230a2` |
 | `REVIEW-CHECKLIST.md` | `093984c21a09291378aa6e0df884597f8c60b50ff97d05e564b2fc52f18dd21a` |
 | `INVENTORY.md` | `a6e4d2b3e4f4d92a90b8ff6bef2eefe881b984a588f7df8a1f25eb720500c9d3` |
-

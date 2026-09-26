@@ -16,7 +16,7 @@ The HERMES mail-compression laboratory also pins `spmfilter/libcmime` 0.2.2 at c
 
 The proven no-radio path includes standard mail, Postfix, HERMES compression/UUCP integration, Taylor UUCP, Mercury simulated constrained transport, remote mailbox receipt evidence, and returned receipt correlation.
 
-Phase 4I proved a specific reciprocal-session defect in the pinned HERMES VARA/Mercury data bridge: retired UUCP tail bytes could survive the old session and appear as `OOOOOO` where the next Taylor slave greeting should be `Shere`. The accepted OceanMail laboratory patch drains that retired TCP tail at the old-session cleanup boundary and adds an explicit cleanup-complete boundary. `Rhizomatica/hermes-net/main` was rechecked on 2026-09-11 and still lacks this fix. Station issue #35 tracks the focused upstream report/PR; do not silently remove the local patch or weaken the reciprocal-session gates until an upstream replacement is accepted and the full acceptance is rerun.
+Phase 4I proved a specific reciprocal-session defect in the pinned HERMES VARA/Mercury data bridge: retired UUCP tail bytes could survive the old session and appear as `OOOOOO` where the next Taylor slave greeting should be `Shere`. The accepted OceanMail laboratory patch drains that retired TCP tail at the old-session cleanup boundary and adds an explicit cleanup-complete boundary. `Rhizomatica/hermes-net/main` was rechecked on 2026-09-11 and still lacks this fix. Station upstream lifecycle work tracks the focused upstream report/PR; do not silently remove the local patch or weaken the reciprocal-session gates until an upstream replacement is accepted and the full acceptance is rerun.
 
 ## Upstream relationship and collaboration state
 

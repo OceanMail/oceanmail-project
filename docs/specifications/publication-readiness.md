@@ -1,8 +1,11 @@
 # OceanMail Publication Readiness
 
-Status: **ACTIVE release/publication gate**
+Status: **ACTIVE release checklist — public source published 2026-09-26**.
 
-This specification defines the minimum review required before any currently private OceanMail repository is made public or used as the source for a public source release. It does **not** select a license or certify a repository for publication. The owner's 2026-09-25 preparation scope and contribution model are recorded in [public-collaboration.md](public-collaboration.md); historical snapshots below do not override that newer direction.
+All five active repositories are public with installed licenses. This checklist
+governs continuing source/release review; it is not an unresolved launch proposal.
+See [PUBLICATION.md](../../PUBLICATION.md) for current status and
+[public-collaboration.md](public-collaboration.md) for contributor policy.
 
 ## Separate decisions
 
@@ -117,41 +120,6 @@ Before opening a repository to outside contributors, decide and add as appropria
 - issue/PR templates and contribution expectations;
 - supported/release status so experimental 0.2 code is not mistaken for production service.
 
-## Current 0.2 audit snapshot — 2026-09-11
-
-This is a readiness snapshot, not a publication decision.
-
-### `OceanMail/oceanmail-desktop`
-
-- Private.
-- Technically plausible public-source candidate.
-- No top-level `LICENSE` is currently present.
-- Decision 0005 already requires explicit Thunderbird redistribution/update/trademark/source-compliance work before public distribution.
-- A full-history/GitHub-surface review and secret scan remain required before any visibility change.
-
-### `OceanMail/oceanmail-station`
-
-- Private.
-- Technically plausible public-source candidate, but **not ready for a blind visibility flip**.
-- No top-level `LICENSE` is currently present.
-- Upstream license/provenance handling is materially documented, including the tracked HERMES laboratory patch.
-- `docs/testing-hardware-acquisition-plan.md` contains real-world field-test geography, personal-contact categories, vessel/site capabilities, and local development-resource detail; it must be sanitized, generalized, relocated to a private record, or intentionally approved before public publication.
-- Historical PRs/commits/evidence may contain workstation-specific paths, machine names, exact laboratory IDs, and older site/test details; audit full history rather than only current `main`.
-
-### `OceanMail/oceanmail-server`
-
-- Private and bootstrap-level.
-- No top-level `LICENSE` is currently present.
-- Current contents are mostly boundary/documentation, but the long-term public/private source model for hosted service implementation is not settled.
-- Do not infer a business/service-source decision from Desktop or Station publication choices.
-
-### `OceanMail/oceanmail-infrastructure`
-
-- Private and explicitly described by its repository README as the private deployment/operations repository.
-- No top-level `LICENSE` is currently present.
-- Its ownership boundary includes topology, DNS/TLS/networking, monitoring, backup/recovery, gateway/VPS operations, and secret-management boundaries; this is the repository most likely to accumulate material that should not be exposed wholesale.
-- If public reproducible deployment examples are later desired, consider a separate generic/sanitized deployment/examples repository rather than making production operations history public by default.
-
 ## Approval outcome
 
 A publication review should end with an explicit per-repository disposition, for example:
@@ -162,4 +130,3 @@ A publication review should end with an explicit per-repository disposition, for
 - `DEFERRED — unresolved licensing/product strategy`.
 
 Record the final disposition in the project decision ledger or an ADR if it materially changes repository/product architecture.
-

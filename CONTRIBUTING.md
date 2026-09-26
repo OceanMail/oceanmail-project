@@ -1,13 +1,10 @@
 # Contributing to OceanMail
 
 Source and documentation licenses are published in [LICENSING.md](LICENSING.md).
-Additional inbound contribution terms, including the proposed DCO, remain
-unadopted. External contribution acceptance remains paused until that policy
-is finalized. Do not infer a license restriction on reuse from this temporary
-contribution-process pause.
+Fork this public repository, create a topic branch and submit a pull request
+against `main`. Maintainers review and merge; upstream write access is unnecessary.
+No DCO or additional inbound agreement is adopted.
 
-Once public, fork the relevant repository, create a topic branch and open a PR
-against main. Organization membership and upstream write access are unnecessary.
 Maintainers review and merge; public review/comment access grants no merge or
 architecture authority. Normal integration preserves a merge commit.
 
@@ -30,6 +27,5 @@ Never request access to a maintainer workstation or trusted runner for PR code.
 Be respectful and keep discussion relevant; maintainers may close unsuitable work.
 No response-time, release, support or contribution-acceptance guarantee is made.
 
-The proposed DCO/license model is in
-[publication-decisions.md](docs/specifications/publication-decisions.md); it is
-not an accepted agreement yet.
+The publication decisions are in
+[publication-decisions.md](docs/specifications/publication-decisions.md). No additional contribution agreement is required by that document.
