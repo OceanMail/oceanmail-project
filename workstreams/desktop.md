@@ -26,7 +26,7 @@ The Available/account/privacy documentation was reconciled with the Station foun
 
 Organization-wide AI/contributor governance belongs in `OceanMail/oceanmail-project`; Desktop retains only component-specific constraints locally.
 
-The accepted design reconciliation covers for OChat transmission evidence, consent-based location/contact-card flows, Grid geographic/topology visualization, Dashboard/Grid visibility, and gateway-policy presentation. These are accepted design documents, not claims that the corresponding Station APIs or live Grid evidence are implemented.
+The accepted design reconciliation covers OChat transmission evidence, consent-based location/contact-card flows, Grid geographic/topology visualization, Dashboard/Grid visibility, and gateway-policy presentation. These are accepted design documents, not claims that the corresponding Station APIs or live Grid evidence are implemented.
 
 ## Constraints
 
