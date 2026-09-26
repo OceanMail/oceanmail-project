@@ -1,0 +1,108 @@
+[
+  {
+    "repository": "OceanMail/bempic",
+    "archived": true,
+    "private": false,
+    "head": "819bfd34e14822960afb969fc14980293a59bac5",
+    "files": 76,
+    "markdown_files": 38,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:00.180962+00:00"
+  },
+  {
+    "repository": "OceanMail/bempic-reference",
+    "archived": true,
+    "private": false,
+    "head": "c182f1dd42d64e3117e505904ce06696057ee9c3",
+    "files": 94,
+    "markdown_files": 18,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:01.391274+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-0.1-prototype",
+    "archived": true,
+    "private": true,
+    "head": "5761fdf5a823e5ae7ccb1d81846a19156b87ed73",
+    "files": 89,
+    "markdown_files": 56,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:02.694093+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-infrastructure-0.1-prototype",
+    "archived": true,
+    "private": true,
+    "head": "5daf16ae0501df603d11bf29cdf0b748e72ec22b",
+    "files": 80,
+    "markdown_files": 16,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:03.875486+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-server-0.1-prototype",
+    "archived": true,
+    "private": true,
+    "head": "3d2bebc47e6c918fc7270e2fcec392b10b7d5542",
+    "files": 58,
+    "markdown_files": 18,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:05.214554+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-desktop",
+    "archived": false,
+    "private": true,
+    "head": "4931be00f3df1398c53d032b21863985918fb75f",
+    "files": 118,
+    "markdown_files": 57,
+    "workflows": [
+      ".github/workflows/oceanmail-desktop.yml"
+    ],
+    "measured_at": "2026-09-22T21:47:06.606506+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-server",
+    "archived": false,
+    "private": true,
+    "head": "9a21d2493ceb5eb6b760aebd42a81493218850ce",
+    "files": 3,
+    "markdown_files": 3,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:07.968301+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-infrastructure",
+    "archived": false,
+    "private": true,
+    "head": "228b6d3602d39843eefce1c3aba454e1a6c0f90b",
+    "files": 4,
+    "markdown_files": 4,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:09.147321+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-station",
+    "archived": false,
+    "private": true,
+    "head": "ec9e5f232aac722bae25a979098100cc3c0dbaf9",
+    "files": 77,
+    "markdown_files": 23,
+    "workflows": [
+      ".github/workflows/phase3-dovecot-compat.yml",
+      ".github/workflows/phase4i-linux-acceptance.yml",
+      ".github/workflows/phase4j-auth.yml"
+    ],
+    "measured_at": "2026-09-22T21:47:10.312096+00:00"
+  },
+  {
+    "repository": "OceanMail/oceanmail-project",
+    "archived": false,
+    "private": true,
+    "head": "7b911b57491b7c3aa6dc599f9003c1e69dafb741",
+    "files": 49,
+    "markdown_files": 49,
+    "workflows": [],
+    "measured_at": "2026-09-22T21:47:11.619053+00:00"
+  }
+]

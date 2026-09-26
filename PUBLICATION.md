@@ -1,5 +1,8 @@
 # Fresh source publication
 
+> Publication scope update — 2026-09-26: the owner approved fresh public repositories for **all five active components: Project, Station, Desktop, Server and Infrastructure**. Preserve the original repositories privately with `-archive` suffixes. The five older BEMPIC/0.1 repositories remain private and frozen. Earlier three-repository scope statements below are superseded historical records.
+
+
 Owner-approved 2026-09-26: this repository starts with sanitized current source
 and a new initial commit. Pre-publication Git history, numbered issues/PRs,
 Actions records and recovery copies remain in a separate private repository
