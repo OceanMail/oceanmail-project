@@ -4,7 +4,7 @@ Status: HISTORICAL / RECONCILED 2026-09-11
 
 ## Scope and repository identity
 
-This record closes the original OceanMail implementation thread that began against `OceanMail/oceanmail-desktop` and coordinated read-only with separate BEMPIC work. After the organization migration, that source history is preserved as [`OceanMail/oceanmail-0.1-prototype`](https://github.com/OceanMail/oceanmail-0.1-prototype); the related research repositories are [`OceanMail/bempic`](https://github.com/OceanMail/bempic) and [`OceanMail/bempic-reference`](https://github.com/OceanMail/bempic-reference).
+This record summarizes the superseded OceanMail 0.1 implementation direction.
 
 This document is historical orientation, not current implementation authority. Current architecture is defined by the project spine and the active component repositories.
 
@@ -24,12 +24,6 @@ It then:
 - aligned the historical text-email model with one-or-more recipients, optional subject, explicit creation/ordering input, and stable application identity rather than treating the initial single-recipient fixture as the complete domain model;
 - retained an exact synthetic RFC 5322/MIME fixture at `tests/fixtures/m0-original.eml`; that fixture is 330 bytes and exists to separate application normalization from later protocol/transport measurements; and
 - required deterministic measurements for application/semantic bytes, protocol traffic by direction, carrier/link bytes when observable, useful committed bytes, duplicate/retransmitted payload, quote error, and elapsed simulated time.
-
-The exact historical M0 decision and consumer contract remain on the `archive/v0.1-generation` branch of `oceanmail-0.1-prototype`, especially:
-
-- `docs/adr/0001-layer-boundary-and-m0.md`;
-- `docs/BEMPIC-INTEGRATION-REQUIREMENTS.md`; and
-- `crates/oceanmail-sync/src/lib.rs`.
 
 Later 0.1 work added stronger application identity, normalization, conflict, receipt, planner, and BEMPIC research evidence. Those repository artifacts supersede intermediate chat statements that BEMPIC Reference was nonexistent, unlicensed, or only a Python proof.
 

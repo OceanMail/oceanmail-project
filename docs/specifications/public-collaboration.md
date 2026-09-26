@@ -1,40 +1,21 @@
-# Public collaboration and publication policy
+# Public collaboration policy
 
-> Publication scope update — 2026-09-26: the owner approved fresh public repositories for **all five active components: Project, Station, Desktop, Server and Infrastructure**. Preserve the original repositories privately with `-archive` suffixes. The five older BEMPIC/0.1 repositories remain private and frozen. Earlier three-repository scope statements below are superseded historical records.
-
-
-Status: **ACTIVE owner direction, 2026-09-26**. All five fresh source repositories are public; source publication does not establish production readiness.
-Master tracker: [Project #42](https://github.com/OceanMail/oceanmail-project-archive/issues/42).
+Status: **ACTIVE — updated 2026-09-26**.
 
 ## Scope and authority
 
-Maintain public contribution access for Project, Station, Desktop, Server and
-Infrastructure in their fresh sanitized repositories. Preserve the five original
-development repositories privately under `-archive` names. The five older
-BEMPIC/0.1 repositories remain private and frozen; preservation is not development
-authorization. Server and Infrastructure are documentation bootstraps.
+Project, Station, Desktop, Server and Infrastructure are public source repositories.
+Server and Infrastructure are bootstraps. See [PUBLICATION.md](../../PUBLICATION.md).
 
-Historical scope: the 2026-09-25 three-repository restriction is superseded by
-the 2026-09-26 five-repository decision. Do not convert the private history
-repositories in place. See [PUBLICATION.md](../../PUBLICATION.md).
-
-External contributors, including Rafael, normally receive no organization
-membership or Write/Maintain/Admin permission. They read, fork, submit PRs,
-review and comment. Maintainers control merges and the owner retains final
-project direction. Contribution does not confer architectural authority.
-Use topic branches and merge commits; retain review and rollback history.
-
-The owner authorized preparation and safe completed-work merges on 2026-09-25.
-The owner subsequently approved the code/docs license choices and zero required
-approvals, and required removal of personal/runner information. Licenses are installed in the fresh public repositories. Track remaining rights,
-contribution and administrative evidence in publication-readiness.md and issue #42;
-publication itself does not establish that every gate passed. Unknown evidence is
-a blocker, not a pass.
+External contributors read, fork, submit PRs, review and comment without organization
+membership or upstream Write/Maintain/Admin permission. Maintainers control merges;
+the owner retains final project direction. Use topic branches and merge commits.
+The installed licenses apply; no DCO or additional inbound agreement is adopted.
+See [publication decisions](publication-decisions.md).
 
 ## Public CI boundary
 
-Use standard GitHub-hosted runners for public PR validation. Before conversion,
-remove the repository from every trusted self-hosted runner group's access and
+Use standard GitHub-hosted runners for public PR validation. Keep the repository excluded from every trusted self-hosted runner group's access and
 verify public-repository access is disabled. Audit repository-scoped runners too.
 Local workstations are never public PR execution targets.
 
@@ -50,14 +31,10 @@ validation. Do not promote untrusted artifacts/caches into privileged release
 jobs. Hardware testing is a separate, deliberate maintainer operation against
 reviewed exact commits, outside public PR dispatch.
 
-Before publication verify Actions default permissions, external-contributor
-approval settings, reusable workflows, apps, keys and collaborator access.
-Prepare required checks and main protection before changing visibility; verify
-protection immediately afterward. Use an actual non-write external fork to
-verify the boundary before converting the next repository. Private-repository
-fork restrictions can prevent that exact test before the first conversion;
-record that limitation, retain the pre-publication static/settings checks, and
-do not describe a same-repository PR as external-fork evidence.
+Maintain read-only Actions defaults, contributor-approval settings, protected main,
+required checks, and reviewed app/key/collaborator access. An end-to-end test with
+an external fork and a non-write contributor remains unverified. Record that test
+separately from same-repository PR validation.
 
 ## Privacy and provenance
 
@@ -99,13 +76,10 @@ automatic invalidity. Publication does not resolve earlier third-party rights.
 
 ## Remaining owner decisions
 
-Code/docs license choices are approved; inbound contribution terms and ownership attestations remain pending in
-[publication-decisions.md](publication-decisions.md). Security-reporting activation,
-administrative access verification and historical privacy disposition also remain
-publication gates. None is silently adopted by this document.
+The license and contribution decisions are recorded in
+[publication-decisions.md](publication-decisions.md). Additional contribution
+agreements have not been adopted.
 
 Source publication is separate from binary redistribution, service operation,
-radio authorization and production readiness. Encryption/export publication
-obligations must be evaluated for the material actually shipped. Emergency
-features are experimental and do not replace certified distress equipment.
-
+radio authorization and production readiness. Evaluate obligations for the material
+actually shipped. Emergency features do not replace certified distress equipment.

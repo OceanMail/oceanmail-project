@@ -1,8 +1,8 @@
 # Scheduling documentation audit — 2026-09-21
 
-Scope: scanned 278 repository-owned Markdown/reStructuredText/text files across all ten repositories in the current inventory (vendor trees excluded). Reviewed matching scheduling/band references and relevant Emergency, shared-update, channel, accounting, authority, and historical-status documents. This is a documentation audit, not a code or protocol correctness review.
+Scope: scanned 278 repository-owned Markdown/reStructuredText/text files during the pre-publication documentation review (vendor trees excluded). Reviewed matching scheduling/band references and relevant Emergency, shared-update, channel, accounting, authority, and historical-status documents. This is a documentation audit, not a code or protocol correctness review.
 
-## Source snapshots
+## Public component source snapshots (historical subset)
 
 | Repository | Source commit | Files scanned |
 | --- | --- | --- |
@@ -11,11 +11,6 @@ Scope: scanned 278 repository-owned Markdown/reStructuredText/text files across 
 | oceanmail-desktop | `23a412493515f7513c25e43af46448f74118c86f` | 56 |
 | oceanmail-server | `23a1c39a40734e4d4eaccd8555fafd388d335963` | 3 |
 | oceanmail-infrastructure | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | 4 |
-| bempic | `819bfd34e14822960afb969fc14980293a59bac5` | 39 |
-| bempic-reference | `c182f1dd42d64e3117e505904ce06696057ee9c3` | 19 |
-| oceanmail-0.1-prototype | `5761fdf5a823e5ae7ccb1d81846a19156b87ed73` | 56 |
-| oceanmail-server-0.1-prototype | `3d2bebc47e6c918fc7270e2fcec392b10b7d5542` | 18 |
-| oceanmail-infrastructure-0.1-prototype | `5daf16ae0501df603d11bf29cdf0b748e72ec22b` | 16 |
 
 Project/Station/Desktop source snapshots are the existing documentation PR heads; other repositories use their observed main heads.
 

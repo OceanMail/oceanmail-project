@@ -100,7 +100,7 @@ Transit forwarding does not debit a local user's byte allowance merely because t
 
 Emergency overrides ordinary budgets; other eligibility, permission, holds, and capacity-tier restrictions still apply. Whether local-account manifests continue after the broader local-service Station allowance is exhausted remains a separate policy boundary, not answered by the configurable per-lease control cap.
 
-Existing Server accounting authority, no paid ordinary precedence, transport-owned ARQ/stores, privacy gates, and Phase 5 authorization requirements remain unchanged. [ADR-007](ADR-007-hf-link-capacity-tiers-and-survival-mode.md), merged through [Project PR #35](https://github.com/OceanMail/oceanmail-project-archive/pull/35), defines the separate HF capacity tiers. Those tiers govern eligibility within this scheduling structure; ADR-008 does not change their thresholds.
+Existing Server accounting authority, no paid ordinary precedence, transport-owned ARQ/stores, privacy gates, and Phase 5 authorization requirements remain unchanged. [ADR-007](ADR-007-hf-link-capacity-tiers-and-survival-mode.md) defines the separate HF capacity tiers. Those tiers govern eligibility within this scheduling structure; ADR-008 does not change their thresholds.
 
 ## Implementation acceptance
 

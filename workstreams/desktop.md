@@ -48,12 +48,12 @@ Desktop PR #21 merged the final chat-preservation design reconciliation for OCha
 
 ## Major outstanding work
 
-Merged laboratory work: [Desktop #22](https://github.com/OceanMail/oceanmail-desktop-archive/pull/22)
-consumes Station #48's lab-only auth-context endpoints without normal UI
-provisioning or persistence of tokens. Desktop #24's bounded CI changes also merged.
-Still-open [Desktop #23](https://github.com/OceanMail/oceanmail-desktop-archive/pull/23)
-fixes fixture-plan ordering/hold defects, including attachment-only work. Neither
-PR replaces fixture rows with real Available nor closes Station issue #24.
+The laboratory client consumes the Station auth-context endpoints without normal
+UI provisioning or persisted tokens. Public [PR #1](https://github.com/OceanMail/oceanmail-desktop/pull/1)
+adds Dashboard/Watch stale-render guards; [PR #2](https://github.com/OceanMail/oceanmail-desktop/pull/2)
+repairs the cross-component auth runner. Neither replaces fixtures with a real
+Available service. Live Thunderbird Hold/Resume, attachment ordering and
+stale-render acceptance remain outstanding.
 
 - replace Available fixtures with authenticated account-scoped Station capabilities as Station identity/auth/account-grant/API work lands;
 - define and implement the real Available manifest/retrieval operations and authoritative accounting behavior without promoting fixture booleans/credits into production contracts;
@@ -68,4 +68,3 @@ PR replaces fixture rows with real Available nor closes Station issue #24.
 Band 1 is public discovery/route/access coordination plus authorized urgent public updates. Band 2 includes ordinary manifests, requests, receipts, custody/repair/stop-flow/tombstones, account reconciliation, and payload, with expedited mail control within its fairness shares. Bands 0/1/3 are public over HF. Client–own Station, direct Client–Server Internet, and gateway–Server connections are always authenticated and encrypted. Personal HF encryption, if adopted, terminates at Station and Server through untrusted relays/gateways; the deployed path has no plaintext capability or fallback. A single deployment choice remains pending feasibility, not a user or per-message option. External SMTP is a separate boundary without a universal encryption guarantee.
 
 [ADR-009](../docs/decisions/ADR-009-personal-traffic-and-encryption.md) governs follow-on work. Component classification, API/transport security, and key management require implementation and validation; no production capability is claimed by this documentation.
-
