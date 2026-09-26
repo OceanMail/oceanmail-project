@@ -10,9 +10,11 @@ control in the affected repository's Security tab when it is available. If it is
 unavailable, withhold sensitive details and request a private reporting channel
 from a maintainer. Do not use a public PR as a substitute.
 
-**Publication gate:** maintainers must enable and test private vulnerability
-reporting, or publish and test another private contact route, before inviting
-external contributors. That activation has not yet been verified.
+**Reporting availability:** GitHub private vulnerability reporting is enabled
+for all five public repositories (administrator API verified 2026-09-26). Use
+Security → Report a vulnerability in the affected repository. An end-to-end
+submission by a non-maintainer has not been tested; maintainers must complete
+that check. If the control is unavailable, follow the fallback above.
 
 A private report should include affected component/commit, impact, minimal
 synthetic reproduction, environment and suggested remediation. Avoid testing
