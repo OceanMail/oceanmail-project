@@ -46,7 +46,7 @@ Claude should normally:
 6. review its own actual diff and CI before handoff, and report assumptions, evidence, remaining gaps, and branch/PR state truthfully;
 7. leave work in a reviewable state.
 
-Claude may edit, test, commit, push, and prepare/update PRs within scope. Claude does not merge; merge requires owner authorization under the owning repository's workflow. Claude's self-review is not independent review evidence.
+Claude may edit, test, commit, push, and prepare/update PRs within scope. Claude merges a PR only when the owner explicitly instructs it to merge that specific PR; otherwise the PR waits for the owner. One instruction does not authorize later merges. Claude's self-review is not independent review evidence.
 
 ### ChatGPT — big-picture decisions and independent review
 
@@ -280,7 +280,7 @@ or exact escalation
 Outstanding gaps/blockers:
 PR status:
 
-Do not merge unless explicitly authorized.
+Do not merge unless the owner explicitly instructs a merge of this PR.
 ```
 
 ## Cross-repository work

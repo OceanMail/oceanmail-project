@@ -8,7 +8,7 @@ The human owner is final authority for product direction, major architecture, se
 
 Current operating roles:
 
-- **Claude** — primary programmer since 2026-10-27; plans and carries out bounded work within the settled architecture: code development, maintenance, troubleshooting, tests, CI repair, documentation upkeep, commits and PRs. Has architectural latitude: proposes needed architecture changes to the owner, and the owner and Claude may decide them without ChatGPT. Does not merge and does not count its own review as independent evidence.
+- **Claude** — primary programmer since 2026-10-27; plans and carries out bounded work within the settled architecture: code development, maintenance, troubleshooting, tests, CI repair, documentation upkeep, commits and PRs. Has architectural latitude: proposes needed architecture changes to the owner, and the owner and Claude may decide them without ChatGPT. Merges a PR only when the owner explicitly instructs it for that PR, and does not count its own review as independent evidence.
 - **ChatGPT** — optional big-picture architecture/decision role when the owner wants it, and independent bug-finding review of Claude's work when the owner asks. Not a day-to-day planner.
 - **Codex** — no standing role since 2026-10-27; it was previously the primary implementation agent.
 - **Git/GitHub** — durable source of project truth and implementation evidence.
