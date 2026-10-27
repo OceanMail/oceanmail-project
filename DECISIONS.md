@@ -1,5 +1,19 @@
 # OceanMail Decisions
 
+## 2026-10-27 — Station clippy and dependency advisories gate at zero
+
+**Decision:** Station CI fails on any `cargo clippy` warning (all targets, locked dependencies, pinned toolchain) and on any `cargo audit` advisory against `Cargo.lock`. Existing findings are fixed first, so the gate starts at zero. This replaces the S3b baseline and S4 ratchet phases of the CI retrofit for these two tools only.
+
+**Clarification:** An unavoidable advisory or lint, such as one with no fixed upstream release, is allowed only through an explicit, reviewed exception in the repository. Each exception names the advisory or lint, gives a reason and, for advisories, an expiry date. No blanket suppression is allowed. The other retrofit tools and phases (Python, shell, Semgrep, coverage, characterization, audits) are unchanged. Making the job a required check is an owner branch-protection action.
+
+**Reason:** The last measurement found 4 clippy diagnostics and no product advisories. A baseline and ratchet add machinery without benefit when the count can simply be brought to zero, and the gap is tracked as [Station #23](https://github.com/OceanMail/oceanmail-station/issues/23).
+
+**Rejected/Previous behavior:** freezing current clippy and advisory findings as a baseline (S3b) and enforcing them through a separate ratchet PR (S4).
+
+**Affected components:** Station. Desktop and other components keep their planned retrofit phases.
+
+**Status:** ACTIVE. Decided by the owner and Claude.
+
 ## 2026-10-27 — Claude becomes primary programmer; architecture is foundational
 
 **Decision:** The owner remains final decision-maker. Claude replaces Codex as primary implementation agent and owns code development, maintenance, troubleshooting, tests, CI repair and PR preparation across the OceanMail repositories. ChatGPT keeps an optional big-picture architecture/decision role for when the owner wants it. When the owner asks, it also reviews Claude's work as an independent bug-finder. Codex has no standing role. Git/GitHub remains the durable convergence point.
