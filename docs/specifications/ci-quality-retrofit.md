@@ -130,6 +130,12 @@ links are pending rather than fabricated.
 | P4 `quality/ci-docs` / Project | Required quality documentation workflow. | Claude | Not started; requires separate assignment |
 | P8 `quality/burndown-SECTION` / Project | One documentation section's accepted style/link debt per PR. | Claude | Not started; requires separate assignment |
 
+Update 2026-10-27: for Station clippy and `cargo audit` only, S3b and S4 are
+replaced by a zero-tolerance CI gate. Current findings are fixed first, and
+explicit reviewed exceptions are the only escape. See `DECISIONS.md` and
+[Station #23](https://github.com/OceanMail/oceanmail-station/issues/23). S3b and S4
+still apply to the other Station tools.
+
 The combined D7/fixes/D8 shorthand above means three distinct task families:
 D7 audits (Claude), D7-fix-ISSUE (Claude) and D8 burndown-MODULE (Claude), all
 not started. No combined implementation PR is permitted.
