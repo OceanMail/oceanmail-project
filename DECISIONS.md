@@ -1,5 +1,19 @@
 # OceanMail Decisions
 
+## 2026-10-27 — Claude becomes primary programmer; architecture is foundational
+
+**Decision:** The owner remains final decision-maker. Claude replaces Codex as primary implementation agent and owns code development, maintenance, troubleshooting, tests, CI repair and PR preparation across the OceanMail repositories. ChatGPT keeps an optional big-picture architecture/decision role for when the owner wants it. When the owner asks, it also reviews Claude's work as an independent bug-finder. Codex has no standing role. Git/GitHub remains the durable convergence point.
+
+**Clarification:** OceanMail's purpose, plan and mission are now foundational. The accepted architecture in this repository changes only when needed, especially to meet law/regulation or verified technical limits such as code, upstream, platform or hardware constraints. Claude has architectural latitude: when it sees the need for an architecture change, it proposes the change to the owner through the escalation gate. The owner and Claude may decide without ChatGPT, and the owner may involve ChatGPT when wanted. The resulting decision is recorded here before implementation. Inside the settled architecture, Claude plans and carries out bounded work from tracked issues and owner direction without a separate planner. Claude merges a PR only when the owner explicitly instructs it to merge that PR. Claude does not count its own review as independent evidence. Independent review comes from ChatGPT at the owner's request or from a separate fresh-context Claude review session.
+
+**Reason:** The project goals are set. Most of the remaining work is implementation and maintenance against those goals, so the owner has moved primary programming to Claude and narrowed ChatGPT to big-picture decisions and occasional independent review.
+
+**Rejected/Previous behavior:** ChatGPT as standing day-to-day planner/director and Codex as primary implementer (2026-09-11 role convergence). Also rejected: treating the architecture as open to change for implementation convenience.
+
+**Affected components:** all.
+
+**Status:** ACTIVE. Supersedes the 2026-09-11 role convergence. Detailed workflow: `docs/specifications/ai-development-workflow.md`.
+
 ## 2026-09-26 — Public source and contributor documentation
 
 **Decision:** Project, Station, Desktop, Server and Infrastructure are public.
@@ -100,7 +114,7 @@ See [PUBLICATION.md](PUBLICATION.md) and [public collaboration](docs/specificati
 
 **Affected components:** all.
 
-**Status:** ACTIVE. Detailed workflow: `docs/specifications/ai-development-workflow.md`.
+**Status:** SUPERSEDED 2026-10-27 by "Claude becomes primary programmer; architecture is foundational". Retained as history.
 
 ## 2026-09-11 — Desktop Mail hierarchy and queue ownership
 

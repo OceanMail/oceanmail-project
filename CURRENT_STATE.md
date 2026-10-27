@@ -179,6 +179,10 @@ Band 1 is public discovery/route/access coordination plus authorized urgent publ
 
 See [ADR-009](docs/decisions/ADR-009-personal-traffic-and-encryption.md). This records accepted design, not deployed encryption or traffic-classification evidence. Existing runtime/RF and production-security gates remain in force.
 
+## AI development roles (2026-10-27)
+
+Claude is the primary programmer, replacing Codex, and is responsible for development, maintenance and troubleshooting. Claude has architectural latitude: it proposes needed architecture changes to the owner, and the two may decide without ChatGPT. ChatGPT keeps an optional big-picture role and reviews Claude's work for bugs when the owner asks. Codex has no standing role. Claude merges only on the owner's explicit instruction for each PR. The project's purpose, plan and mission are foundational and change only when needed, especially for legal/regulatory or verified technical limits. See `DECISIONS.md` and the [AI development workflow](docs/specifications/ai-development-workflow.md). Component repositories whose own instructions name Codex or ChatGPT in the old roles, such as Desktop's visual QA loop, need matching follow-up changes.
+
 ## CI retrofit coordination
 
 G0/S1 and the S2 mechanical cleanup are historical completed phases. S3a tooling and Project tracking merged on 2026-09-26. [The public port record](docs/quality/station-s3a-public-port.md) records scope, validation and the specific review exception. No production baseline, required quality gate or branch enforcement is enabled. S3b/S4 require separate assignment.

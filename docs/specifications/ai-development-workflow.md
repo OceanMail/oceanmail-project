@@ -2,75 +2,73 @@
 
 Status: ACTIVE PROCESS
 
-This specification defines the default division of responsibility among the human owner, ChatGPT, Codex, Claude, Git/GitHub, local development machines, and CI for OceanMail development work. It is an operating process, not product architecture.
+This specification defines the default division of responsibility among the human owner, Claude, ChatGPT, Git/GitHub, local development machines, and CI for OceanMail development work. It is an operating process, not product architecture.
+
+Updated 2026-10-27: Claude replaced Codex as primary programmer. ChatGPT moved from day-to-day planner/director to a big-picture decision and occasional review role. Codex has no standing role. See `DECISIONS.md`.
 
 ## Authority
 
 - The human owner is the final decision-maker for product direction, architecture, security/privacy, merge/release, regulatory, and safety-sensitive choices.
 - Git/GitHub is the durable convergence point and authoritative project record.
+- OceanMail's purpose, plan and mission are foundational. Accepted architecture changes only when needed, especially for law/regulation or verified technical limits (code, upstream, platform, hardware), through the architecture escalation gate. Claude may raise such changes; the owner decides, with or without ChatGPT.
 - AI output is advisory or implementation work until reconciled into the repository and accepted through the normal project workflow.
 - Passing tests or CI is implementation evidence, not permission to redefine architecture or proof that live product behavior was verified.
 
 ## Roles
 
-### ChatGPT — primary architect, designer, planner, and director
+### Claude — primary programmer
 
-ChatGPT owns cross-repository architectural continuity and the default planning/directing role for OceanMail work.
+Claude is the default agent for OceanMail repository work, normally from the owner's Linux client/bash environment.
 
-Responsibilities include:
-
-- defining and maintaining system architecture and product behavior;
-- reconciling new work with accepted project decisions and repository truth;
-- decomposing work into bounded implementation tasks;
-- defining constraints, acceptance criteria, required tests, and non-goals;
-- preparing implementation-ready Codex handoffs;
-- independently reviewing actual Git/PR/CI state rather than accepting an implementation-agent handoff at face value;
-- deciding when an independent Claude architecture/review pass is useful;
-- evaluating Claude review findings and deciding which suggestions should be adopted;
-- directing accepted follow-up implementation work;
-- identifying when a proposed implementation would silently redefine architecture.
-
-ChatGPT may proactively ask Claude to critique an architectural decision and suggest improvements. Claude's response is advisory input; ChatGPT remains the primary architect/designer and is responsible for reconciling accepted suggestions with existing Git truth before implementation.
-
-### Codex — primary implementation/coding agent
-
-Codex is the default agent for actual repository implementation work, normally from the Linux client/bash environment.
-
-Use Codex for:
+Use Claude for:
 
 - feature implementation;
+- maintenance, troubleshooting, and debugging;
 - repository-wide changes and refactors;
-- debugging;
 - tests and CI repair;
 - migrations;
 - dependency/build changes;
 - Git operations and PR preparation;
-- applying concrete accepted review findings.
+- applying concrete accepted review findings;
+- keeping component status docs, `CURRENT_STATE.md`, workstreams, and active handoffs current with the work.
 
-Codex should normally:
+Within the settled architecture, Claude also plans its own bounded tasks from tracked issues and owner direction: it defines acceptance criteria, required tests, and non-goals before implementing.
+
+Claude has architectural latitude. When it sees the need for an architecture change, it proposes the change to the owner using the escalation format. The owner and Claude may decide without ChatGPT. The decision is recorded in Git before implementation proceeds.
+
+Claude should normally:
 
 1. inspect the repository and relevant project/component documentation before editing;
-2. implement against explicit requirements rather than inventing architecture;
+2. implement against accepted requirements rather than inventing architecture;
 3. preserve unrelated work;
 4. run relevant tests, static checks, and integration checks available in scope;
 5. investigate and fix regressions caused by its changes;
-6. report assumptions, evidence, remaining gaps, and branch/PR state truthfully;
+6. review its own actual diff and CI before handoff, and report assumptions, evidence, remaining gaps, and branch/PR state truthfully;
 7. leave work in a reviewable state.
 
-Codex may edit, test, commit, push, and prepare/update PRs within the assigned scope. Codex does not merge by default; merge requires owner authorization under the owning repository's workflow.
+Claude may edit, test, commit, push, and prepare/update PRs within scope. Claude merges a PR only when the owner explicitly instructs it to merge that specific PR; otherwise the PR waits for the owner. One instruction does not authorize later merges. Claude's self-review is not independent review evidence.
 
-### Claude — supporting architecture/review agent and independent critic
+### ChatGPT — big-picture decisions and independent review
 
-Claude is used for independent critique and review, including:
+ChatGPT is used when needed for:
 
-- second opinions on architecture;
-- identifying risks, alternatives, and missing considerations;
-- design/specification critique;
-- consequential implementation/PR review;
-- integration-risk analysis;
-- detection of architectural drift, omitted requirements, hidden coupling, insufficient tests, or unintended consequences.
+- big-picture architecture or product decisions the owner wants a second view on (optional; the owner and Claude may decide without it);
+- critique of a proposed architecture change raised through the escalation gate;
+- independent bug-finding review of Claude's implementation or PR, at the owner's request.
 
-Claude does not own OceanMail architecture and is not a competing source of truth or mandatory approval layer. Claude should review against the accepted architecture unless explicitly asked to explore redesign alternatives.
+ChatGPT is not a day-to-day planner or approval gate. Its findings are advisory until triaged under the review rules below.
+
+### Codex — no standing role
+
+Codex was the primary implementation agent until 2026-10-27. The owner may still assign it a specific task. Any such work follows the same branch/PR, evidence, and review rules.
+
+### Independent review
+
+An independent reviewer is anyone other than the session that authored the change: ChatGPT at the owner's request, or a separate Claude review session started with fresh context against the exact base/head. Independent review covers:
+
+- architectural drift and omitted requirements;
+- bugs, edge cases, and insufficient tests;
+- security/integration problems, hidden coupling, and unintended consequences.
 
 ### Git/GitHub — durable convergence point
 
@@ -106,19 +104,17 @@ Rules:
 
 ## Default workflow
 
-### 1. Design and planning
+### 1. Task definition
 
-The owner and ChatGPT establish or update the design. ChatGPT checks current Git truth and defines the intended behavior, affected boundaries, constraints, acceptance criteria, required evidence/tests, and explicit non-goals.
+Claude checks current Git truth and defines the task from the tracked issue or owner direction: intended behavior, affected boundaries, constraints, acceptance criteria, required evidence/tests, and explicit non-goals, all within the accepted architecture. Architecture questions go to the owner, who may decide with Claude alone or involve ChatGPT.
 
-### 2. Optional independent architecture critique
+### 2. Architecture changes and optional critique
 
-When useful, ChatGPT asks Claude to review the proposed decision for risks, alternatives, missing considerations, and possible improvements.
+When a task needs an architecture change, Claude proposes it to the owner and they decide together. The owner may also ask ChatGPT to critique it. Its suggestions are not automatically accepted. They are reconciled against current repository truth, and the owner decides.
 
-Claude's suggestions are not automatically accepted. ChatGPT reconciles them against current repository truth and the owner's direction, then updates the design or rejects the suggestion explicitly as appropriate.
+### 3. Task shape
 
-### 3. Implementation handoff
-
-ChatGPT gives Codex an implementation-ready task that should include, as applicable:
+An implementation-ready task should include, as applicable:
 
 - objective;
 - relevant authoritative files/specifications/ADRs;
@@ -128,35 +124,35 @@ ChatGPT gives Codex an implementation-ready task that should include, as applica
 - required tests/evidence;
 - integration points;
 - non-goals;
-- constraints Codex must not redesign around.
+- constraints the implementation must not redesign around.
 
-The handoff should normally be concise because Codex can inspect the repository directly; do not restate the entire project architecture when durable repository instructions already provide it.
+Keep it concise; durable repository instructions already provide the architecture.
 
 ### 4. Implementation and verification
 
-Codex implements in the Linux/bash development environment, runs relevant checks, fixes regressions, and reports the evidence obtained without overstating it.
+Claude implements in the Linux/bash development environment, runs relevant checks, fixes regressions, and reports the evidence obtained without overstating it.
 
-### 5. Independent project-lead review
+### 5. Self-review against Git truth
 
-After Codex returns a handoff, ChatGPT should inspect the actual repository/PR when possible:
+Before handoff, Claude inspects the actual repository/PR:
 
 1. confirm repository, branch, and HEAD;
 2. inspect changed files/diff;
 3. compare the change against accepted architecture and task acceptance criteria;
 4. inspect CI status/logs where relevant;
-5. distinguish tested facts from agent claims;
+5. distinguish tested facts from assumptions;
 6. require live verification when the changed behavior cannot be proven by static/integration tests;
-7. accept, issue a narrow correction, or escalate an architecture decision.
+7. finish, issue a narrow correction, or escalate an architecture decision.
 
 Implementation-agent confidence is not merge evidence by itself.
 
-### 6. Optional independent implementation review
+### 6. Optional independent review
 
-For consequential changes, ChatGPT may ask Claude to review the implementation or PR for architectural drift, security/integration problems, requirement omissions, edge cases, and insufficient tests.
+For consequential changes, the owner may ask ChatGPT, or Claude may start a separate fresh-context review session, to review the implementation or PR for bugs, architectural drift, security/integration problems, requirement omissions, edge cases, and insufficient tests.
 
 ### 7. Review triage
 
-ChatGPT evaluates review findings against accepted architecture and repository evidence. Findings should be treated as one of:
+Claude proposes a disposition for each finding, against accepted architecture and repository evidence:
 
 - must fix;
 - should fix;
@@ -164,7 +160,7 @@ ChatGPT evaluates review findings against accepted architecture and repository e
 - incorrect/not applicable;
 - architectural question requiring owner decision.
 
-Codex implements accepted code/documentation fixes. Claude findings are not blindly applied.
+The owner decides disputed findings and architectural questions. Claude implements accepted fixes. Findings are not blindly applied.
 
 ### 8. Live/product verification when required
 
@@ -173,15 +169,15 @@ When the requirement concerns actual UI, application startup/profile behavior, a
 For Desktop UI-affecting work, use this default visual QA loop:
 
 ```text
-Codex
+Claude
   -> implements
   -> launches the pinned Thunderbird/OceanMail Desktop build where practical
   -> captures affected surfaces/screenshots
   -> performs first-pass visual QA
   -> fixes obvious visual/interaction regressions
 
-ChatGPT
-  -> independently reviews actual diff/CI
+Independent reviewer (when consequential)
+  -> reviews actual diff/CI
   -> reviews selected final screenshots/captures
   -> requires additional live verification when screenshots cannot prove the behavior
 
@@ -191,7 +187,7 @@ Owner
      platform behavior, or another requirement cannot be established reliably otherwise
 ```
 
-The owner does not need to manually inspect every minor visual change when Codex first-pass QA plus independent ChatGPT review provides sufficient evidence. Conversely, screenshots do not replace live verification for interaction, timing, focus, startup/profile lifecycle, platform behavior, hardware, or other runtime behavior that cannot be proven from a static capture.
+The owner does not need to manually inspect every minor visual change when Claude first-pass QA plus, for consequential changes, independent review provides sufficient evidence. Conversely, screenshots do not replace live verification for interaction, timing, focus, startup/profile lifecycle, platform behavior, hardware, or other runtime behavior that cannot be proven from a static capture.
 
 Stale screenshots should not be retained as current product evidence. Retained visual evidence should identify the verified build/HEAD when practical.
 
@@ -219,7 +215,7 @@ A green unit test or CI run must never be described as proof that a live GUI/har
 
 ## Architecture escalation gate
 
-When Codex discovers that an accepted design is impossible, materially unsafe, incompatible with upstream behavior, or likely to require a major architectural change, it must stop rather than quietly improvise.
+When Claude sees the need for an architecture change, or discovers that an accepted design is impossible, materially unsafe, incompatible with upstream behavior, or likely to require a major architectural change, it must stop rather than quietly improvise, and bring the proposal to the owner.
 
 Required escalation format:
 
@@ -234,7 +230,7 @@ Recommended option:
 Affected repositories/files:
 ```
 
-The owner and ChatGPT resolve the question and record the resulting decision before implementation resumes.
+The owner and Claude resolve the question, with ChatGPT only when the owner wants it, and record the resulting decision before implementation resumes.
 
 ## Assignment and handoff shape
 
@@ -253,7 +249,7 @@ Required validation:
 Return:
 ```
 
-Recommended Codex completion handoff:
+Recommended completion handoff:
 
 ```text
 Repository:
@@ -284,15 +280,15 @@ or exact escalation
 Outstanding gaps/blockers:
 PR status:
 
-Do not merge unless explicitly authorized.
+Do not merge unless the owner explicitly instructs a merge of this PR.
 ```
 
 ## Cross-repository work
 
 When a change spans Desktop, Station, Server, or Infrastructure:
 
-- ChatGPT defines/reconciles the service or contract boundary before implementation;
-- Codex may implement across multiple repositories only when the assignment explicitly scopes that work;
+- an unsettled service or contract boundary is proposed by Claude and decided by the owner before implementation;
+- Claude may implement across multiple repositories when the task explicitly scopes that work;
 - each repository's local instructions apply;
 - API/contract changes must be documented at the authoritative boundary;
 - do not solve a missing API by fabricating equivalent behavior in the wrong component;
@@ -301,20 +297,20 @@ When a change spans Desktop, Station, Server, or Infrastructure:
 ## Governing rules
 
 - Established Git decisions take precedence over suggestions from any AI agent unless deliberately changed.
-- Neither Claude review text nor Codex implementation silently changes architecture.
+- Neither review text nor implementation by any agent silently changes architecture.
 - Architectural changes should be recorded in the appropriate decision/specification documents before or with implementation.
-- Small, obvious changes do not require an independent Claude pass.
-- Consequential or cross-component changes should receive stronger independent review when it materially reduces risk, but Claude is advisory rather than an approval gate.
-- When Claude and Codex disagree, ChatGPT reconciles the disagreement using repository truth, tests/evidence, accepted decisions, and the owner's direction.
+- Small, obvious changes do not require an independent review pass.
+- Consequential or cross-component changes should receive stronger independent review when it materially reduces risk, but review is advisory rather than an approval gate.
+- When a reviewer and Claude disagree, the owner decides, using repository truth, tests/evidence, accepted decisions, and the owner's direction.
 - Security, privacy, safety, and evidence-truthfulness constraints are architecture boundaries, not implementation conveniences.
 
 ## Operating principle
 
-> ChatGPT designs and directs. Codex implements. Git preserves. CI verifies deterministic behavior. Local/live environments verify reality. Claude independently critiques when warranted. The owner retains final authority.
+> The settled architecture sets direction. Claude implements and maintains. Claude proposes needed architecture changes and the owner decides. ChatGPT advises and reviews for bugs when asked. Git preserves. CI verifies deterministic behavior. Local/live environments verify reality. The owner retains final authority.
 
 Implementation success, automated-test success, and actual product correctness are separate claims and must be evidenced separately.
 
 ## Scoped CI retrofit review requirement
 
-For every PR in the [CI retrofit rollout](ci-quality-retrofit.md), independent Claude review of the exact base/head is required, including governance and small changes. This overrides the optional implementation-review default only for this rollout. Claude provides findings and a recommendation, ChatGPT triages, and the owner retains merge and branch-protection authority. No review or green check authorizes advancement beyond the assigned task.
+For every PR in the [CI retrofit rollout](ci-quality-retrofit.md), independent review of the exact base/head by a reviewer other than the authoring session (a separate fresh-context Claude review session, or ChatGPT at the owner's request) is required, including governance and small changes. This overrides the optional implementation-review default only for this rollout. The reviewer provides findings and a recommendation, Claude proposes dispositions, the owner decides disputed ones, and the owner retains merge and branch-protection authority. No review or green check authorizes advancement beyond the assigned task.
 
