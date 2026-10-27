@@ -8,9 +8,9 @@ The human owner is final authority for product direction, major architecture, se
 
 Current operating roles:
 
-- **ChatGPT** — primary architect/project lead; maintains cross-repository architecture, plans work, defines acceptance criteria, reconciles conflicts, and reviews results.
-- **Codex** — primary implementation/coding agent; normally works from the Linux client/bash environment and edits, tests, debugs, documents, commits, and prepares PRs within assigned scope.
-- **Claude** — supporting architecture/review agent and independent critic; advisory, not a competing source of truth. ChatGPT may proactively ask Claude to critique an architectural decision or consequential implementation and decides which suggestions, if any, become project direction.
+- **Claude** — primary programmer since 2026-10-27; plans and carries out bounded work within the settled architecture: code development, maintenance, troubleshooting, tests, CI repair, documentation upkeep, commits and PRs. Has architectural latitude: proposes needed architecture changes to the owner, and the owner and Claude may decide them without ChatGPT. Does not merge and does not count its own review as independent evidence.
+- **ChatGPT** — optional big-picture architecture/decision role when the owner wants it, and independent bug-finding review of Claude's work when the owner asks. Not a day-to-day planner.
+- **Codex** — no standing role since 2026-10-27; it was previously the primary implementation agent.
 - **Git/GitHub** — durable source of project truth and implementation evidence.
 
 The detailed operating workflow is defined in [`docs/specifications/ai-development-workflow.md`](docs/specifications/ai-development-workflow.md).
@@ -27,6 +27,8 @@ The detailed operating workflow is defined in [`docs/specifications/ai-developme
 8. the owning component repository's `AGENTS.md`, current status/docs, source, open PRs/issues, and tests as applicable
 
 Do not reconstruct OceanMail architecture from old AI assumptions when Git contains newer truth.
+
+OceanMail's purpose, plan and mission are foundational. Change accepted architecture only when needed (especially for law/regulation or verified technical limits), through the escalation gate below. Claude may raise such changes; the owner decides, with or without ChatGPT.
 
 ## Conflict handling
 
@@ -114,4 +116,4 @@ Active non-default branches must have a visible purpose. After a pull request is
 
 ## CI retrofit assignments
 
-For retrofit work, read [the rollout specification](docs/specifications/ci-quality-retrofit.md), the assigned task, and component instructions. Every retrofit PR requires an independent Claude review of the exact proposed head, including small tooling/documentation PRs; this scoped rule supersedes the general optional-review default. Claude remains advisory, ChatGPT triages, and the owner controls merge/protection. Keep measurement, mechanical cleanup, adapters, baseline seed, CI, characterization, audits and fixes in separate PRs. Unknown metrics are not zero. Do not advance beyond the assigned phase. This repository has no CLAUDE.md convention; these shared instructions apply to Claude too.
+For retrofit work, read [the rollout specification](docs/specifications/ci-quality-retrofit.md), the assigned task, and component instructions. Every retrofit PR requires an independent review of the exact proposed head by a reviewer other than the authoring session (a separate fresh-context Claude review session, or ChatGPT at the owner's request), including small tooling/documentation PRs; this scoped rule supersedes the general optional-review default. Claude proposes a disposition for each finding, the owner decides disputed or architectural ones, and the owner controls merge/protection. Keep measurement, mechanical cleanup, adapters, baseline seed, CI, characterization, audits and fixes in separate PRs. Unknown metrics are not zero. Do not advance beyond the assigned phase. This repository has no CLAUDE.md convention; these shared instructions apply to Claude too.

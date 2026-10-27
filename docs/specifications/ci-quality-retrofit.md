@@ -8,8 +8,11 @@ measurements below remain historical and do not validate new public heads.
 
 ## Scope and authority
 
-Codex implements, ChatGPT plans/triages, Claude independently reviews **every**
-retrofit PR against its exact base/head, and the owner decides merge/protection.
+Claude implements and plans each assigned task. A reviewer other than the
+authoring session (a separate fresh-context Claude review session, or ChatGPT at
+the owner's request) independently reviews **every** retrofit PR against its
+exact base/head, and the owner decides merge/protection. Before 2026-10-27,
+Codex implemented, ChatGPT planned/triaged and Claude reviewed.
 A draft PR or green check does not authorize merge or another phase.
 The [S3a record](../quality/station-s3a-public-port.md) documents the specific
 owner-approved repeat-review exception for that completed closeout.
@@ -43,7 +46,7 @@ No physical-radio Phase 5 is authorized by CI retrofit phase numbers.
 Tooling, mechanical cleanup, adapters, seed and workflow PRs stay separate.
 Characterization tests lock current behavior without asserting correctness.
 Audit bugs require a reproducing failing test on unchanged code; hypotheses
-remain separate. ChatGPT triages, owner approves, then one fix/regression PR per
+remain separate. Claude proposes dispositions, owner approves, then one fix/regression PR per
 approved bug proves red-to-green. No application changes in measurement tasks.
 
 ## Verified inventory and count tracker
@@ -56,11 +59,11 @@ metrics still need measurement. No repository is declared retrofit-complete.
 
 | Repository | Inventory / measured SHA | State | Phase / owner | Lint / types / security / test exceptions | Coverage by module | Next / evidence / last measurement |
 | --- | --- | --- | --- | --- | --- | --- |
-| `oceanmail-desktop` | `4931be00f3df1398c53d032b21863985918fb75f` | Active | Not started / Codex | Unknown | Unknown | See task register / inventory only / none |
-| `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
-| `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
-| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a merged / Codex | (S1, historical) Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
-| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0/S2 tracking accepted historically; public S3a tracking merged / Codex | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
+| `oceanmail-desktop` | `4931be00f3df1398c53d032b21863985918fb75f` | Active | Not started / Claude | Unknown | Unknown | See task register / inventory only / none |
+| `oceanmail-server` | `9a21d2493ceb5eb6b760aebd42a81493218850ce` | Active | Not started / Claude | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
+| `oceanmail-infrastructure` | `228b6d3602d39843eefce1c3aba454e1a6c0f90b` | Active | Not started / Claude | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
+| `oceanmail-station` | `f9c4fc6ca392d99f110fa18e892c70f5f757da11` (S1 PR head) | Active | S1/S2 accepted historically; public S3a merged / Claude | (S1, historical) Clippy 4 emissions; ShellCheck 23 unsuppressed; Ruff 0; Python strict types 296; Semgrep 1 INFO; product advisories 0; tools: see report; observed test skips/xfail 0 | [Seven-file report](https://github.com/OceanMail/oceanmail-station/blob/main/docs/quality/S1-MEASUREMENT.md#rust-file-coverage) | S1 measured 2026-09-22; [S2 evidence](../quality/station-s2-2026-09-23.md) / 2026-09-23 |
+| `oceanmail-project` | `7b911b57491b7c3aa6dc599f9003c1e69dafb741` | Active | G0/S2 tracking accepted historically; public S3a tracking merged / Claude | Unknown; application types/tests N/A | Application N/A | See task register / inventory only / none |
 
 Station source/tooling measurement was sealed at
 `2f22edba9a57ae7782fec0f9f27b81f555eaaed5`; subsequent commits add only the
@@ -82,7 +85,7 @@ an open public PR or authorization for subsequent work.
 
 Each listed ID is a separate bounded concern (parameterized fixes/burn-downs
 are separate PRs per bug/module). Every row has an accountable owner and status.
-Codex-owned tasks also have Claude review and ChatGPT triage; human operations
+Agent-owned tasks also have independent review and owner-decided triage; human operations
 remain the owner's work. G0/S1/S2 are accepted historically; the public S3a port is merged. Future issue/PR
 links are pending rather than fabricated.
 
@@ -92,48 +95,48 @@ links are pending rather than fabricated.
 | S1 `quality/measure` / Station | Phase 1 report-only tooling and scope: pin compatible tools, identify feature/target/test matrix; collect Rust, shell, Python, lab/static, Semgrep and dependency measurements; update local agent commands. | Codex | Completed historically; original measurements retained; subsequent acceptance summarized with S2 |
 | S2 `quality/mechanical` / Station | Phase 2, title `Mechanical cleanup — no logic changes`. cargo fmt plus reviewed safe Python/shell formatting where applicable. No cargo clippy --fix by default. | Codex | Completed historically; [self-contained evidence summary](../quality/station-s2-2026-09-23.md) |
 | S3a `quality/ratchet-adapters` / Station | Tooling only: implement/test Clippy, shellcheck, Python type, audit and config/suppression adapters described in CI-CONTRACT.md. No production cleanup or baseline seeding. | Codex | Public tooling merged; no baseline or enforcement; [current record](../quality/station-s3a-public-port.md) |
-| S3b `quality/baseline` / Station | Freeze measured residual diagnostics; exact targeted expected failures/issues if any; README ledger and type/lint policies. | Codex | Not started; requires separate assignment |
-| S4 `quality/ci` / Station | Instantiate ci-rust-station.yml plus shell/Python fragment and actual locked configs. Integrate existing auth/readiness tests. Preserve Phase 3 and Phase 4I jobs; remove no evidence checks. | Codex | Not started; requires separate assignment |
+| S3b `quality/baseline` / Station | Freeze measured residual diagnostics; exact targeted expected failures/issues if any; README ledger and type/lint policies. | Claude | Not started; requires separate assignment |
+| S4 `quality/ci` / Station | Instantiate ci-rust-station.yml plus shell/Python fragment and actual locked configs. Integrate existing auth/readiness tests. Preserve Phase 3 and Phase 4I jobs; remove no evidence checks. | Claude | Not started; requires separate assignment |
 | S5 human / Station | Branch protection and runner boundary verification, not an agent PR. | Owner | Not started; requires separate assignment |
-| S6a `test/characterize-auth` / Station | Tests only for uncovered auth.rs cases: principal/account isolation, malformed credentials, revoked/invalid grants, persistence failures as applicable to current code. | Codex | Not started; requires separate assignment |
-| S6b `test/characterize-state-evidence` / Station | Tests only, one uncovered unit per PR within src/lib.rs or receipt/evidence binaries: persistence/restart/dedup/correlation/input parsing. | Codex | Not started; requires separate assignment |
-| S6c `test/characterize-lease` / Station | Tests only for uncovered src/lease.rs boundaries: timing/expiry/preemption/state transitions within implemented policy. | Codex | Not started; requires separate assignment |
-| S7 per-module audit / Station | Claude writes reproducing tests on audit branches; ChatGPT triages; owner approves. | Claude | Not started; requires separate assignment |
-| S7-fix-ISSUE / Station | One approved fix and its regression test per PR, labeled bug fix. | Codex | Not started; requires separate assignment |
-| S8 `quality/burndown-MODULE` / Station | One module's accepted diagnostic/type debt, with focused tests if behavior changes. | Codex | Not started; requires separate assignment |
-| D1 `quality/measure` / Desktop | Report-only ESLint/Prettier/checkJs, existing custom lint/node tests, complete extension/script coverage, Semgrep and npm audit. | Codex | Not started; requires separate assignment |
-| D2 `quality/mechanical` / Desktop | Safe ESLint fixes plus Prettier; title `Mechanical cleanup — no logic changes`. | Codex | Not started; requires separate assignment |
-| D3a `quality/ratchet-adapters` / Desktop | ESLint/type/audit/config and coverage-path adapters with tooling tests. | Codex | Not started; requires separate assignment |
-| D3b `quality/baseline` / Desktop | Seed exact legacy diagnostics and any strictly justified known failing tests; document ledger/issues/source scope. | Codex | Not started; requires separate assignment |
-| D4 `quality/ci` / Desktop | Instantiate JavaScript template plus shell checks; keep existing custom lint and node tests. Retain current workflow until equivalent coverage is verified. | Codex | Not started; requires separate assignment |
+| S6a `test/characterize-auth` / Station | Tests only for uncovered auth.rs cases: principal/account isolation, malformed credentials, revoked/invalid grants, persistence failures as applicable to current code. | Claude | Not started; requires separate assignment |
+| S6b `test/characterize-state-evidence` / Station | Tests only, one uncovered unit per PR within src/lib.rs or receipt/evidence binaries: persistence/restart/dedup/correlation/input parsing. | Claude | Not started; requires separate assignment |
+| S6c `test/characterize-lease` / Station | Tests only for uncovered src/lease.rs boundaries: timing/expiry/preemption/state transitions within implemented policy. | Claude | Not started; requires separate assignment |
+| S7 per-module audit / Station | Claude writes reproducing tests on audit branches in a session separate from the fix author; owner approves dispositions. | Claude | Not started; requires separate assignment |
+| S7-fix-ISSUE / Station | One approved fix and its regression test per PR, labeled bug fix. | Claude | Not started; requires separate assignment |
+| S8 `quality/burndown-MODULE` / Station | One module's accepted diagnostic/type debt, with focused tests if behavior changes. | Claude | Not started; requires separate assignment |
+| D1 `quality/measure` / Desktop | Report-only ESLint/Prettier/checkJs, existing custom lint/node tests, complete extension/script coverage, Semgrep and npm audit. | Claude | Not started; requires separate assignment |
+| D2 `quality/mechanical` / Desktop | Safe ESLint fixes plus Prettier; title `Mechanical cleanup — no logic changes`. | Claude | Not started; requires separate assignment |
+| D3a `quality/ratchet-adapters` / Desktop | ESLint/type/audit/config and coverage-path adapters with tooling tests. | Claude | Not started; requires separate assignment |
+| D3b `quality/baseline` / Desktop | Seed exact legacy diagnostics and any strictly justified known failing tests; document ledger/issues/source scope. | Claude | Not started; requires separate assignment |
+| D4 `quality/ci` / Desktop | Instantiate JavaScript template plus shell checks; keep existing custom lint and node tests. Retain current workflow until equivalent coverage is verified. | Claude | Not started; requires separate assignment |
 | D5 human / Desktop | Owner enables branch protection. | Owner | Not started; requires separate assignment |
-| D6a `test/characterize-station-auth` / Desktop | Tests only for uncovered station/lab-auth-client.js and station-client.js behavior, one module per PR. | Codex | Not started; requires separate assignment |
-| D6b `test/characterize-available` / Desktop | Tests only for uncovered Available planner/model edges, one module per PR. | Codex | Not started; requires separate assignment |
-| D6c `test/characterize-evidence-lifecycle` / Desktop | Tests only, one module per PR: sent-status model or Experiment cleanup/profile coexistence. | Codex | Not started; requires separate assignment |
-| D7 / fixes / D8 / Desktop | Same independent audit, one-bug-per-PR fix, and one-module debt burn-down contract as Station. | Codex | Not started; requires separate assignment |
-| V1 `quality/measure-docs` / Server | Inventory three Markdown files; report-only Markdown/link checks; add quality commands to AGENTS/CLAUDE. | Codex | Not started; requires separate assignment |
-| V2 `quality/mechanical-docs` / Server | Mechanical Markdown formatting only, if violations warrant a PR. | Codex | Not started; requires separate assignment |
-| V3 `quality/docs-baseline` / Server | Implement/test documentation adapters, seed exact style/link exceptions and ledger; document tooling dependencies. | Codex | Not started; requires separate assignment |
-| V4 `quality/ci-docs` / Server | Instantiate documentation workflow. | Codex | Not started; requires separate assignment |
-| V6 future / Server | At first application module, establish its actual stack's lint/types/tests/security/coverage gate before merging application growth. | Codex | Not started; requires separate assignment |
-| I1 `quality/measure-docs` / Infrastructure | Inventory four Markdown runbooks, report-only docs/link checks; record current runner model. | Codex | Not started; requires separate assignment |
-| I2 `quality/mechanical-docs` / Infrastructure | Mechanical document formatting only if needed. | Codex | Not started; requires separate assignment |
-| I3 `quality/docs-baseline` / Infrastructure | Tested docs adapters/ledger and executable-source introduction guard. | Codex | Not started; requires separate assignment |
-| I4 `quality/ci-docs` / Infrastructure | Documentation workflow plus tooling dependency audit. | Codex | Not started; requires separate assignment |
-| I6 future / Infrastructure | Before executable deployment code lands: shell/schema/IaC validation and isolated fixtures, then module-level characterization/audit. | Codex | Not started; requires separate assignment |
-| P1 `quality/measure-docs` / Project | Report-only Markdown, local links/anchors, decision/index/workstream reference checks. | Codex | Not started; requires separate assignment |
-| P2 `quality/mechanical-docs` / Project | Mechanical formatting only if needed. | Codex | Not started; requires separate assignment |
-| P3 `quality/docs-baseline` / Project | Tested docs/reference adapters and exact exception seed. | Codex | Not started; requires separate assignment |
-| P4 `quality/ci-docs` / Project | Required quality documentation workflow. | Codex | Not started; requires separate assignment |
-| P8 `quality/burndown-SECTION` / Project | One documentation section's accepted style/link debt per PR. | Codex | Not started; requires separate assignment |
+| D6a `test/characterize-station-auth` / Desktop | Tests only for uncovered station/lab-auth-client.js and station-client.js behavior, one module per PR. | Claude | Not started; requires separate assignment |
+| D6b `test/characterize-available` / Desktop | Tests only for uncovered Available planner/model edges, one module per PR. | Claude | Not started; requires separate assignment |
+| D6c `test/characterize-evidence-lifecycle` / Desktop | Tests only, one module per PR: sent-status model or Experiment cleanup/profile coexistence. | Claude | Not started; requires separate assignment |
+| D7 / fixes / D8 / Desktop | Same independent audit, one-bug-per-PR fix, and one-module debt burn-down contract as Station. | Claude | Not started; requires separate assignment |
+| V1 `quality/measure-docs` / Server | Inventory three Markdown files; report-only Markdown/link checks; add quality commands to AGENTS/CLAUDE. | Claude | Not started; requires separate assignment |
+| V2 `quality/mechanical-docs` / Server | Mechanical Markdown formatting only, if violations warrant a PR. | Claude | Not started; requires separate assignment |
+| V3 `quality/docs-baseline` / Server | Implement/test documentation adapters, seed exact style/link exceptions and ledger; document tooling dependencies. | Claude | Not started; requires separate assignment |
+| V4 `quality/ci-docs` / Server | Instantiate documentation workflow. | Claude | Not started; requires separate assignment |
+| V6 future / Server | At first application module, establish its actual stack's lint/types/tests/security/coverage gate before merging application growth. | Claude | Not started; requires separate assignment |
+| I1 `quality/measure-docs` / Infrastructure | Inventory four Markdown runbooks, report-only docs/link checks; record current runner model. | Claude | Not started; requires separate assignment |
+| I2 `quality/mechanical-docs` / Infrastructure | Mechanical document formatting only if needed. | Claude | Not started; requires separate assignment |
+| I3 `quality/docs-baseline` / Infrastructure | Tested docs adapters/ledger and executable-source introduction guard. | Claude | Not started; requires separate assignment |
+| I4 `quality/ci-docs` / Infrastructure | Documentation workflow plus tooling dependency audit. | Claude | Not started; requires separate assignment |
+| I6 future / Infrastructure | Before executable deployment code lands: shell/schema/IaC validation and isolated fixtures, then module-level characterization/audit. | Claude | Not started; requires separate assignment |
+| P1 `quality/measure-docs` / Project | Report-only Markdown, local links/anchors, decision/index/workstream reference checks. | Claude | Not started; requires separate assignment |
+| P2 `quality/mechanical-docs` / Project | Mechanical formatting only if needed. | Claude | Not started; requires separate assignment |
+| P3 `quality/docs-baseline` / Project | Tested docs/reference adapters and exact exception seed. | Claude | Not started; requires separate assignment |
+| P4 `quality/ci-docs` / Project | Required quality documentation workflow. | Claude | Not started; requires separate assignment |
+| P8 `quality/burndown-SECTION` / Project | One documentation section's accepted style/link debt per PR. | Claude | Not started; requires separate assignment |
 
 The combined D7/fixes/D8 shorthand above means three distinct task families:
-D7 audits (Claude), D7-fix-ISSUE (Codex) and D8 burndown-MODULE (Codex), all
+D7 audits (Claude), D7-fix-ISSUE (Claude) and D8 burndown-MODULE (Claude), all
 not started. No combined implementation PR is permitted.
 
 ## Review and completion
 
-Claude inspects actual diff, exact base/head, full findings, test identities and
+The independent reviewer inspects actual diff, exact base/head, full findings, test identities and
 outcomes, scope/exclusions, tool failures, coverage paths and CI logs. Report
 severity, reproduction, observed invariant, gaps and recommendation. Each future
 gate needs an isolated negative probe; do not infer gate enforcement from a
